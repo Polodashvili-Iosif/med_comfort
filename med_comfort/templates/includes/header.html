@@ -1,0 +1,37 @@
+{% load static %}
+<header class="p-3 mb-3 border-bottom sticky-top bg-white">
+  <div class="container">
+    <nav  class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start  navbar-expand-lg navbar-light">
+      <a href="{% url 'main:index' %}" class="d-flex align-items-center mb-2 mb-lg-0 link-body-emphasis text-decoration-none">
+        <img src="{% static 'images/logo.png' %}" alt="Логотип" class="img-fluid" style="width: 50px; height: auto;">
+      </a>
+
+      <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fa-solid fa-list " style="font-size: 32px;"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0 fs-5 ">
+          <li><a href="#" class="nav-link px-2 link-body-emphasis"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Услуги</font></font></a></li>
+          <li><a href="#" class="nav-link px-2 link-body-emphasis"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Врачи</font></font></a></li>
+          <li><a href="#" class="nav-link px-2 link-body-emphasis"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Клиники</font></font></a></li>
+        </ul>
+
+        <form class="d-flex mb-lg-0 me-lg-3" role="search">
+          <input class="form-control me-2" type="search" placeholder="Поиск..." aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Поиск</button>
+        </form>
+
+        <div class="dropdown text-end">
+          <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa-regular fa-user" style="font-size: 32px;"></i>
+          </a>
+          <ul class="dropdown-menu text-small" style="">
+            <li><a class="dropdown-item" href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Профиль</font></font></a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Выход</font></font></a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>

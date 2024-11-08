@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block title %}Клиника Мед Комфорт{% endblock %}
+
+{% block content %}
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center">
+        <h1 class="display-4 mb-4">Добро пожаловать в Мед Комфорт!</h1>
+        <p class="lead mb-5">Мы предоставляем широкий спектр медицинских услуг, чтобы помочь вам поддерживать здоровье.</p>
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <form class="d-flex mb-4" role="search">
+          <input class="form-control me-2" type="search" placeholder="Найти услуги..." aria-label="Search">
+          <button class="btn bg-success text-white" type="submit">Поиск</button>
+        </form>
+      </div>
+    </div>
+
+    <h3 class="text-center mb-4">Популярные услуги</h3>
+    <div class="row">
+      <div class="col-md-4 mb-3">
+        <a href="#" class="link-success link-underline-opacity-0 link-underline-opacity-75-hover">
+          <strong>Консультация терапевта</strong>
+        </a>
+        <p>Получите квалифицированную консультацию у терапевта.</p>
+      </div>
+      <div class="col-md-4 mb-3">
+        <a href="#" class="link-success link-underline-opacity-0 link-underline-opacity-75-hover">
+          <strong>Диагностика и анализы</strong>
+        </a>
+        <p>Все виды анализов и обследований.</p>
+      </div>
+      <div class="col-md-4 mb-3">
+        <a href="#" class="link-success link-underline-opacity-0 link-underline-opacity-75-hover">
+          <strong>УЗИ диагностика</strong>
+        </a>
+        <p>Профессиональная диагностика с использованием УЗИ.</p>
+      </div>
+      <div class="col-md-4 mb-3">
+        <a href="#" class="link-success link-underline-opacity-0 link-underline-opacity-75-hover">
+          <strong>МРТ</strong>
+        </a>
+        <p>Безопасное и точное исследование для диагностики заболеваний внутренних органов и тканей.</p>
+      </div>
+      <div class="col-md-4 mb-3">
+        <a href="#" class="link-success link-underline-opacity-0 link-underline-opacity-75-hover">
+          <strong>Вакцинация</strong>
+        </a>
+        <p>Прививки для профилактики различных заболеваний.</p>
+      </div>
+      <div class="col-md-4 mb-3">
+        <a href="#" class="link-success link-underline-opacity-0 link-underline-opacity-75-hover">
+          <strong>Массаж</strong>
+        </a>
+        <p>Профессиональные услуги массажа для оздоровления.</p>
+      </div>
+    </div>
+  </div>
+{% endblock %}
