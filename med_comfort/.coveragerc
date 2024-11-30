@@ -1,0 +1,5 @@
+[report]
+omit =
+    manage.py
+    med_comfort/asgi.py
+    med_comfort/wsgi.py
