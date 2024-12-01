@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ category.name }}{% endblock %}
+
+{% block content %}
+  <div class="container mt-5 fs-5">
+    <h2>{{ category.name }}</h2>
+    <p>{{ category.description }}</p>
+
+    <h3 class="text-center mb-4">Категории услуг</h3>
+    <div class="row">
+      {% for service in services  %}
+        <div class="col-md-4 mb-3">
+          <a href="{% url 'services:service_detail' service.id %}" class="text-black link-underline-success link-underline-opacity-0 link-underline-opacity-75-hover">
+            {{ service.name }}
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}
