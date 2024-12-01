@@ -6,4 +6,5 @@ app_name = 'services'
 
 urlpatterns = [
     path('', views.services_list, name='services_list'),
+    path('category/<int:pk>/', views.category_detail, name='category_detail'),
 ]
