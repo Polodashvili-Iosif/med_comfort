@@ -20,11 +20,13 @@ jobs:
 
       - name: Test with isort
         run: |
-          isort --check-only med_comfort/
+          cd med_comfort/
+          isort --check-only ./
 
       - name: Test with flake8
         run: |
-          flake8 med_comfort/
+          cd med_comfort/
+          flake8 ./
 
       - name: Test with pytest
         env:
