@@ -1,4 +1,4 @@
-<footer class="bg-light py-4 mt-auto border-top">
+<footer class="bg-light py-4 mt-auto border-top fs-5">
   <div class="container">
     <div class="row">
       <div class="col-md-4">
@@ -14,7 +14,7 @@
         <h5>Карта сайта</h5>
         <ul class="list-unstyled">
           <li><a href="{% url 'main:index' %}" class="text-dark">Главная</a></li>
-          <li><a href="#" class="text-dark">Услуги</a></li>
+          <li><a href="{% url 'services:services_list' %}" class="text-dark">Услуги</a></li>
           <li><a href="#" class="text-dark">Врачи</a></li>
           <li><a href="#" class="text-dark">Клиники</a></li>
         </ul>
