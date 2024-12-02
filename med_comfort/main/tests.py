@@ -9,6 +9,6 @@ class TestHomePage:
         response = client.get(reverse('main:index'))
         assert response.status_code == 200
 
-    def test_homepage_uses_correct_template(self, client):
+    def test_homepage_uses_correct_template(self, client: Client):
         response = client.get(reverse('main:index'))
         assert response.templates[0].name == 'main/index.html'
