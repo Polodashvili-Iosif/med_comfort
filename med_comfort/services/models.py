@@ -4,6 +4,7 @@ from django.db import models
 class ServiceCategory(models.Model):
     name = models.CharField('Название категории', max_length=200, unique=True)
     description = models.TextField('Описание')
+    slug = models.SlugField('Slug', unique=True, blank=True)
 
     class Meta:
         verbose_name = 'Категория услуги'
@@ -24,6 +25,7 @@ class Service(models.Model):
         related_name='services',
         verbose_name='Категория услуги'
     )
+    slug = models.SlugField('Slug', unique=True, blank=True)
 
     class Meta:
         verbose_name = 'Услуга'
