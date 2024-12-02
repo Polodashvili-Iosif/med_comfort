@@ -7,13 +7,13 @@
   <script src="https://kit.fontawesome.com/bdb0385003.js" crossorigin="anonymous"></script>
   <title>{% block title %}{% endblock %}</title>
 </head>
-<body>
+<body class="d-flex flex-column min-vh-100">
 
   {% include 'includes/header.html' %}
 
-  <main>
-     {% block content %}
-     {% endblock %}
+  <main class="flex-shrink-0">
+    {% block content %}
+    {% endblock %}
   </main>
 
   {% include 'includes/footer.html' %}
