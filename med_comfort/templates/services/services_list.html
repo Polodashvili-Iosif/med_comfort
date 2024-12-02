@@ -69,7 +69,7 @@
         <div class="row">
       {% for service in services %}
         <div class="col-md-4 mb-3">
-          <a href="#" class="text-black link-underline-success link-underline-opacity-0 link-underline-opacity-75-hover">
+          <a href="{% url 'services:service_detail' service.slug %}" class="text-black link-underline-success link-underline-opacity-0 link-underline-opacity-75-hover">
             {{ service.name }}
           </a>
         </div>
