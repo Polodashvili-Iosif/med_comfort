@@ -20,3 +20,11 @@ def category_detail(request, slug):
         'category': category
     }
     return render(request, 'services/category_detail.html', context)
+
+
+def service_detail(request, slug):
+    service = get_object_or_404(Service, slug=slug)
+    context = {
+        'service': service
+    }
+    return render(request, 'services/service_detail.html', context)
