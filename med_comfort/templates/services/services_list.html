@@ -58,7 +58,7 @@
     <div class="row">
       {% for category in service_categories %}
         <div class="col-md-4 mb-3">
-          <a href="{% url 'services:category_detail' category.id %}" class="text-black link-underline-success link-underline-opacity-0 link-underline-opacity-75-hover">
+          <a href="{% url 'services:category_detail' category.slug %}" class="text-black link-underline-success link-underline-opacity-0 link-underline-opacity-75-hover">
             {{ category.name }}
           </a>
         </div>

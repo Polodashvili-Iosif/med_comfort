@@ -13,8 +13,8 @@ def services_list(request):
     return render(request, 'services/services_list.html', context)
 
 
-def category_detail(request, pk):
-    category = get_object_or_404(ServiceCategory, id=pk)
+def category_detail(request, slug):
+    category = get_object_or_404(ServiceCategory, slug=slug)
     context = {
         'services': category.services.all(),
         'category': category
