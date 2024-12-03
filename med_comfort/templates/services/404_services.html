@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}Сеть клиник Мед Комфорт{% endblock %}
+
+{% block content %}
+  <div class="container mt-5 fs-5">
+    <h1 class="text-success">Нет такой услуги.</h1>
+    <p>
+      Извините, но такой услуги нет на сайте. Пожалуйста, посмотрите
+      <a href="{% url 'services:services_list' %}" class="link-success link-underline-opacity-0">список всех услуг</a>.
+    </p>
+  </div>
+{% endblock %}
