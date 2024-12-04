@@ -1,16 +1,10 @@
 {% extends 'base.html' %}
 
-{% block title %}Сеть клиник Мед Комфорт{% endblock %}
+{% block title %}Услуги сети клиник Мед Комфорт{% endblock %}
 
 {% block content %}
   <div class="container mt-5 fs-5">
-    <div class="row justify-content-center">
-      <div class="col-lg-8 text-center">
-        <h1 class="display-4 mb-4">Добро пожаловать в Мед Комфорт!</h1>
-        <p class="lead mb-5">Мы предоставляем широкий спектр медицинских услуг, чтобы помочь вам поддерживать здоровье.</p>
-      </div>
-    </div>
-
+    <h2>Услуги</h2>
     <div class="row justify-content-center">
       <div class="col-md-8">
         <form class="d-flex mb-4" role="search">
@@ -58,6 +52,28 @@
         </a>
         <p>Профессиональные услуги массажа для оздоровления.</p>
       </div>
+    </div>
+
+    <h3 class="text-center mb-4">Категории услуг</h3>
+    <div class="row">
+      {% for category in service_categories %}
+        <div class="col-md-4 mb-3">
+          <a href="{% url 'services:category_detail' category.slug %}" class="text-black link-underline-success link-underline-opacity-0 link-underline-opacity-75-hover">
+            {{ category.name }}
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+
+    <h3 class="text-center mb-4">Все услуги</h3>
+        <div class="row">
+      {% for service in services %}
+        <div class="col-md-4 mb-3">
+          <a href="{% url 'services:service_detail' service.slug %}" class="text-black link-underline-success link-underline-opacity-0 link-underline-opacity-75-hover">
+            {{ service.name }}
+          </a>
+        </div>
+      {% endfor %}
     </div>
   </div>
 {% endblock %}
