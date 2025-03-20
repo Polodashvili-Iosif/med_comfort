@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %}Клиники Мед Комфорт{% endblock %}
+
+{% block content %}
+  <div class="container mt-5 fs-5">
+    <div class="row align-items-center">
+      <div class="col text-center">
+        <h1>{{ clinic.name }}</h1>
+        <button type="button" class="btn btn-success btn-lg mt-4">Записаться на приём</button>
+      </div>
+      <div class="col">
+        <img src="{{ clinic.image.url }}" class="card-img-top rounded" alt="Фото">
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div class="col">
+        Адрес:
+        <p>{{ clinic.address }}</p>
+      </div>
+      <div class="col">
+        Телефоны:
+        {% for phone_number in clinic.phone_numbers.all %}
+          <br>
+          <a href="tel:{{ phone_number }}" class="link-success link-underline-opacity-0 link-underline-opacity-75-hover">
+            {{ phone_number }}
+          </a> ({{ phone_number.description }})
+        {% endfor %}
+      </div>
+      <div class="col">
+        График работы:
+        <p>{{ clinic.opening_hours }}</p>
+      </div>
+      <div class="col">
+        Почта:
+        <p><a href="mailto:{{ clinic.email }}" class="link-success link-underline-opacity-0 link-underline-opacity-75-hover">{{ clinic.email }}</a></p>
+      </div>
+    </div>
+    <h2>О клинике</h2>
+    <p>{{ clinic.description }}</p>
+  </div>
+{% endblock %}

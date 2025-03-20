@@ -9,7 +9,7 @@
       {% for clinic in clinics %}
         <div class="col-md-4 mb-3 position-relative">
           <img src="{{ clinic.image.url }}" class="card-img-top rounded" alt="Фото">
-          <a href="#" class="text-black link-underline-success link-underline-opacity-0 link-underline-opacity-75-hover stretched-link">
+          <a href="{% url 'clinics:clinic_detail' clinic.pk %}" class="text-black link-underline-success link-underline-opacity-0 link-underline-opacity-75-hover stretched-link">
             {{ clinic.name }}
           </a>
           <p>{{ clinic.address }}</p>
