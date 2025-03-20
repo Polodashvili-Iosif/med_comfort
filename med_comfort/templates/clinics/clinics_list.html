@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}Клиники Мед Комфорт{% endblock %}
+
+{% block content %}
+  <div class="container mt-5 fs-5">
+    <h3 class="text-center mb-4">Клиники</h3>
+    <div class="row">
+      {% for clinic in clinics %}
+        <div class="col-md-4 mb-3 position-relative">
+          <img src="{{ clinic.image.url }}" class="card-img-top rounded" alt="Фото">
+          <a href="#" class="text-black link-underline-success link-underline-opacity-0 link-underline-opacity-75-hover stretched-link">
+            {{ clinic.name }}
+          </a>
+          <p>{{ clinic.address }}</p>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}
