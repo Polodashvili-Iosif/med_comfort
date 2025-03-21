@@ -27,9 +27,10 @@ INSTALLED_APPS = [
 
     'phonenumber_field',
 
+    'clinics',
+    'doctors',
     'main',
     'services',
-    'clinics'
 ]
 
 MIDDLEWARE = [
