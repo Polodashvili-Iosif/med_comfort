@@ -15,7 +15,38 @@ class TestClinicListView:
         response = client.get(reverse('clinics:clinics_list'))
         assertTemplateUsed(response, 'clinics/clinics_list.html')
 
-    def test_context_data(self, client, load_service_data):
+    def test_context_data(self, client, load_clinics_data):
         response = client.get(reverse('clinics:clinics_list'))
         clinics = Clinic.objects.all()
         assert list(response.context['clinics']) == list(clinics)
+
+
+@pytest.mark.django_db
+class TestServiceDetailView:
+    def test_returns_404_for_invalid_pk(self, client):
+        invalid_pk = 0
+        url = reverse(
+            'clinics:clinic_detail', kwargs={'pk': invalid_pk}
+        )
+        response = client.get(url)
+        assert response.status_code == 404
+
+    def test_page_accessible(self, client, load_clinics_data, first_clinic):
+        response = client.get(reverse(
+            'clinics:clinic_detail', kwargs={'pk': first_clinic.pk}
+        ))
+        assert response.status_code == 200
+
+    def test_uses_correct_template(
+            self, client, load_clinics_data, first_clinic
+    ):
+        response = client.get(reverse(
+            'clinics:clinic_detail', kwargs={'pk': first_clinic.pk}
+        ))
+        assertTemplateUsed(response, 'clinics/clinic_detail.html')
+
+    def test_context_data(self, client, load_clinics_data, first_clinic):
+        response = client.get(reverse(
+            'clinics:clinic_detail', kwargs={'pk': first_clinic.pk}
+        ))
+        assert response.context['clinic'] == first_clinic
