@@ -18,6 +18,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('main.urls')),
     path('services/', include('services.urls')),
+    path('clinics/', include('clinics.urls')),
 ]
 
 handler404 = page_not_found_handler
