@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+
+{% load thumbnail %}
+{% load custom_filters %}
+
+{% block title %}Врачи{% endblock %}
+
+{% block content %}
+  <div class="container mt-5 fs-5 mb-5">
+    <h1 class="text-center mb-4">Врачи</h1>
+    <form method="get" class="container my-3">
+      <div class="row g-3">
+        <div class="col-12 input-group mb-3">
+          {{ filter.form.search|add_attrs:"class=form-control; placeholder=Введите специализацию, имя, фамилию или отчество врача" }}
+          <button type="button" class="btn btn-light" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fa-solid fa-sliders"></i> Уточнить поиск
+          </button>
+          <button type="submit" class="btn btn-success">Начать поиск</button>
+        </div>
+
+        <div class="collapse {% if request.GET %}show{% endif %} row g-3" id="navbarToggleExternalContent">
+          <div class="col-12 col-md-2">
+            <div class="form-label">{{ filter.form.patient_category.label }}</div>
+          </div>
+          <div class="col-12 col-md-4">
+            <div class="d-flex flex-column">
+              {{ filter.form.patient_category|add_attrs:"class=form-select" }}
+            </div>
+          </div>
+
+          <div class="col-12 col-md-2">
+            <div class="form-label">{{ filter.form.clinic.label }}</div>
+          </div>
+          <div class="col-12 col-md-4">
+            <div class="d-flex flex-column">
+              {{ filter.form.clinic|add_attrs:"class=form-select" }}
+            </div>
+          </div>
+
+          <div class="col-12 col-md-2">
+            <div class="form-label">{{ filter.form.specialty.label }}</div>
+          </div>
+          <div class="col-12 col-md-4">
+            <div class="d-flex flex-column">
+              {{ filter.form.specialty }}
+            </div>
+          </div>
+
+          <div class="col-12 col-md-2">
+            <div class="form-label">{{ filter.form.doctor_category.label }}</div>
+          </div>
+          <div class="col-12 col-md-4">
+            <div class="d-flex flex-column">
+              {{ filter.form.doctor_category }}
+            </div>
+          </div>
+
+          <div class="col-12 text-end mt-3">
+            <a href="{% url 'doctors:doctors_list' %}" class="btn btn-secondary mx-2">Сбросить</a>
+          </div>
+        </div>
+      </div>
+    </form>
+
+    <div class="row row-cols-1 row-cols-md-4 g-2">
+      {% for doctor in doctors %}
+        <div class="col d-flex align-items-stretch">
+          <div class="card shadow-sm">
+            {% thumbnail doctor.image "800x1200" crop="top" as img %}
+              <a href="#">
+                <img src="{{ img.url }}" class="card-img-top" alt="Фото" width="{{ im.width }}" height="{{ im.height }}">
+              </a>
+            {% endthumbnail %}
+            <div class="card-body d-flex flex-column">
+              <a href="#" class="text-black fw-bold link-underline-success link-underline-opacity-0 link-underline-opacity-75-hover">
+                <h5 class="card-title">{{ doctor }}</h5>
+              </a>
+              <p class="card-text">{{ doctor.specialty.all|join:", "|lower|capfirst }}</p>
+              <div class="mt-auto">
+                <a href="#" class="link-underline link-underline-opacity-0">
+                  <div class="d-grid gap-2">
+                    <button type="button" class="btn btn-outline-success align-self-end">Подробнее</button>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+    {% if page_obj.has_other_pages %}
+      <nav class="mt-3">
+        <ul class="pagination pagination-lg">
+          {% if page_obj.has_previous %}
+            <li class="page-item">
+              <a class="page-link" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+              </a>
+            </li>
+          {% else %}
+            <li class="page-item disabled">
+              <span class="page-link">&laquo;</span>
+            </li>
+          {% endif %}
+
+          {% for page_num in page_obj.paginator.page_range %}
+            <li class="page-item {% if page_obj.number == page_num %}active{% endif %}"><a class="page-link" href="?page={{ page_num }}">{{ page_num }}</a></li>
+          {% endfor %}
+
+          {% if page_obj.has_next %}
+            <li class="page-item">
+              <a class="page-link" href="?page={{ page_obj.next_page_number }}" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+              </a>
+            </li>
+          {% else %}
+            <li class="page-item disabled">
+              <span class="page-link">&raquo;</span>
+            </li>
+          {% endif %}
+        </ul>
+      </nav>
+    {% endif %}
+  </div>
+{% endblock %}
