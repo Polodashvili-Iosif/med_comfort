@@ -12,7 +12,7 @@ class ServiceCategoryAdmin(admin.ModelAdmin):
 
 @admin.register(Service)
 class ServiceAdmin(admin.ModelAdmin):
-    list_display = ('name', 'description', 'category', 'duration')
+    list_display = ('name', 'description', 'category')
     search_fields = ('name', 'category__name')
     list_filter = ('category',)
     ordering = ('name',)
