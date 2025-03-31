@@ -1,0 +1,1451 @@
+[
+{
+    "model": "doctors.specialty",
+    "pk": 1,
+    "fields": {
+        "name": "Акушер"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 2,
+    "fields": {
+        "name": "Акушер-гинеколог"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 3,
+    "fields": {
+        "name": "Аллерголог"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 4,
+    "fields": {
+        "name": "Ангиохирург"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 5,
+    "fields": {
+        "name": "Андролог"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 6,
+    "fields": {
+        "name": "Анестезиолог"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 7,
+    "fields": {
+        "name": "Анестезиолог-реаниматолог"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 8,
+    "fields": {
+        "name": "Аудиолог"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 9,
+    "fields": {
+        "name": "Бактериолог"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 10,
+    "fields": {
+        "name": "Венеролог"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 11,
+    "fields": {
+        "name": "Вертебролог"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 12,
+    "fields": {
+        "name": "Врач лабораторной диагностики"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 13,
+    "fields": {
+        "name": "Врач лечебной физкультуры"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 14,
+    "fields": {
+        "name": "Врач магнитно-резонансной томографии"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 15,
+    "fields": {
+        "name": "Врач общей практики"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 16,
+    "fields": {
+        "name": "Врач спортивной медицины"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 17,
+    "fields": {
+        "name": "Врач ультразвуковой диагностики"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 18,
+    "fields": {
+        "name": "Врач функциональной диагностики"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 19,
+    "fields": {
+        "name": "Гастроэнтеролог"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 20,
+    "fields": {
+        "name": "Гематолог"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 21,
+    "fields": {
+        "name": "Генетик"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 22,
+    "fields": {
+        "name": "Гепатолог"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 23,
+    "fields": {
+        "name": "Гериатр"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 24,
+    "fields": {
+        "name": "Гигиенист"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 25,
+    "fields": {
+        "name": "Гинеколог"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 26,
+    "fields": {
+        "name": "Гирудотерапевт"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 28,
+    "fields": {
+        "name": "Дерматовенеролог"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 29,
+    "fields": {
+        "name": "Дерматолог"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 30,
+    "fields": {
+        "name": "Детский гастроэнтеролог"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 31,
+    "fields": {
+        "name": "Детский гинеколог"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 32,
+    "fields": {
+        "name": "Детский кардиолог"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 33,
+    "fields": {
+        "name": "Детский невролог"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 34,
+    "fields": {
+        "name": "Детский психиатр"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 35,
+    "fields": {
+        "name": "Детский стоматолог"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 36,
+    "fields": {
+        "name": "Детский травматолог-ортопед"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 37,
+    "fields": {
+        "name": "Детский уролог-андролог"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 38,
+    "fields": {
+        "name": "Детский хирург"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 39,
+    "fields": {
+        "name": "Детский эндокринолог"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 40,
+    "fields": {
+        "name": "Диетолог"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 42,
+    "fields": {
+        "name": "Иммунолог"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 43,
+    "fields": {
+        "name": "Инфекционист"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 44,
+    "fields": {
+        "name": "Кардиолог"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 45,
+    "fields": {
+        "name": "Кинезитерапевт"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 46,
+    "fields": {
+        "name": "Клинический фармаколог"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 47,
+    "fields": {
+        "name": "Колопроктолог"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 48,
+    "fields": {
+        "name": "Косметолог"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 49,
+    "fields": {
+        "name": "Лаборант"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 50,
+    "fields": {
+        "name": "Логопед"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 51,
+    "fields": {
+        "name": "ЛОР (Оториноларинголог)"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 52,
+    "fields": {
+        "name": "Маммолог"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 53,
+    "fields": {
+        "name": "Мануальный терапевт"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 54,
+    "fields": {
+        "name": "Массажист"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 55,
+    "fields": {
+        "name": "Медицинская сестра"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 56,
+    "fields": {
+        "name": "Медицинский брат"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 57,
+    "fields": {
+        "name": "Медицинский директор"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 58,
+    "fields": {
+        "name": "Миколог"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 59,
+    "fields": {
+        "name": "Нарколог"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 60,
+    "fields": {
+        "name": "Невролог"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 61,
+    "fields": {
+        "name": "Нейрофизиолог"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 62,
+    "fields": {
+        "name": "Нейрохирург"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 63,
+    "fields": {
+        "name": "Неонатолог"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 64,
+    "fields": {
+        "name": "Нефролог"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 65,
+    "fields": {
+        "name": "Окулист (Офтальмолог)"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 66,
+    "fields": {
+        "name": "Онколог"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 67,
+    "fields": {
+        "name": "Ортопед"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 68,
+    "fields": {
+        "name": "Остеопат"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 69,
+    "fields": {
+        "name": "Паразитолог"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 70,
+    "fields": {
+        "name": "Пародонтолог"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 71,
+    "fields": {
+        "name": "Патологоанатом"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 72,
+    "fields": {
+        "name": "Педагог"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 73,
+    "fields": {
+        "name": "Педиатр"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 74,
+    "fields": {
+        "name": "Пластический хирург"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 75,
+    "fields": {
+        "name": "Проктолог"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 76,
+    "fields": {
+        "name": "Профпатолог"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 77,
+    "fields": {
+        "name": "Психиатр"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 78,
+    "fields": {
+        "name": "Психиатр-нарколог"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 79,
+    "fields": {
+        "name": "Психолог"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 80,
+    "fields": {
+        "name": "Психотерапевт"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 81,
+    "fields": {
+        "name": "Пульмонолог"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 82,
+    "fields": {
+        "name": "Радиолог"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 83,
+    "fields": {
+        "name": "Реабилитолог"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 84,
+    "fields": {
+        "name": "Реаниматолог"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 85,
+    "fields": {
+        "name": "Ревматолог"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 86,
+    "fields": {
+        "name": "Рентгенолог"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 87,
+    "fields": {
+        "name": "Репродуктолог (ЭКО)"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 88,
+    "fields": {
+        "name": "Рефлексотерапевт"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 89,
+    "fields": {
+        "name": "Сексолог"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 90,
+    "fields": {
+        "name": "Сердечно-сосудистый хирург"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 91,
+    "fields": {
+        "name": "Сомнолог"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 92,
+    "fields": {
+        "name": "Стоматолог"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 93,
+    "fields": {
+        "name": "Стоматолог детский"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 94,
+    "fields": {
+        "name": "Стоматолог-гигиенист"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 95,
+    "fields": {
+        "name": "Стоматолог-имплантолог"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 96,
+    "fields": {
+        "name": "Стоматолог-ортодонт"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 97,
+    "fields": {
+        "name": "Стоматолог-ортопед"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 98,
+    "fields": {
+        "name": "Стоматолог-терапевт"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 99,
+    "fields": {
+        "name": "Стоматолог-хирург"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 100,
+    "fields": {
+        "name": "Сурдолог"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 101,
+    "fields": {
+        "name": "Терапевт"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 102,
+    "fields": {
+        "name": "Токсиколог"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 103,
+    "fields": {
+        "name": "Травматолог"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 104,
+    "fields": {
+        "name": "Травматолог-ортопед"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 105,
+    "fields": {
+        "name": "Трансплантолог"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 106,
+    "fields": {
+        "name": "Трансфузиолог"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 107,
+    "fields": {
+        "name": "Трихолог"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 108,
+    "fields": {
+        "name": "Уролог"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 109,
+    "fields": {
+        "name": "Фармацевт"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 110,
+    "fields": {
+        "name": "Фельдшер"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 111,
+    "fields": {
+        "name": "Физиотерапевт"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 112,
+    "fields": {
+        "name": "Флеболог"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 113,
+    "fields": {
+        "name": "Фониатр"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 114,
+    "fields": {
+        "name": "Фтизиатр"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 115,
+    "fields": {
+        "name": "Хирург"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 116,
+    "fields": {
+        "name": "Хирург-имплантолог"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 117,
+    "fields": {
+        "name": "Челюстно-лицевой хирург"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 118,
+    "fields": {
+        "name": "Эмбриолог"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 119,
+    "fields": {
+        "name": "Эндокринолог"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 120,
+    "fields": {
+        "name": "Эндоскопист"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 121,
+    "fields": {
+        "name": "Эпидемиолог"
+    }
+},
+{
+    "model": "doctors.specialty",
+    "pk": 122,
+    "fields": {
+        "name": "Эпилептолог"
+    }
+},
+{
+    "model": "doctors.doctorcategory",
+    "pk": 1,
+    "fields": {
+        "name": "Профессор"
+    }
+},
+{
+    "model": "doctors.doctorcategory",
+    "pk": 2,
+    "fields": {
+        "name": "Доктор медицинских наук"
+    }
+},
+{
+    "model": "doctors.doctorcategory",
+    "pk": 3,
+    "fields": {
+        "name": "Доцент"
+    }
+},
+{
+    "model": "doctors.doctorcategory",
+    "pk": 4,
+    "fields": {
+        "name": "Кандидат медицинских наук"
+    }
+},
+{
+    "model": "doctors.doctorcategory",
+    "pk": 5,
+    "fields": {
+        "name": "Врач высшей квалификационной категории"
+    }
+},
+{
+    "model": "doctors.doctorcategory",
+    "pk": 6,
+    "fields": {
+        "name": "Врач первой квалификационной категории"
+    }
+},
+{
+    "model": "doctors.doctorcategory",
+    "pk": 7,
+    "fields": {
+        "name": "Врач второй квалификационной категории"
+    }
+},
+{
+    "model": "doctors.doctor",
+    "pk": 1,
+    "fields": {
+        "first_name": "Иван",
+        "last_name": "Смирнов",
+        "patronymic": "Алексеевич",
+        "full_name": "Смирнов Иван Алексеевич",
+        "phone_number": "+79161234567",
+        "email": "ivan.smirnov@example.com",
+        "patient_category": "adult",
+        "clinic": 3,
+        "education": "Первый Московский государственный медицинский университет им. И.М. Сеченова",
+        "experience": 15,
+        "image": "doctors/images/ivan_smirnov.jpg",
+        "slug": "smirnov-ivan-alekseevich",
+        "specialty": [
+            44,
+            101
+        ],
+        "doctor_category": [
+            5
+        ]
+    }
+},
+{
+    "model": "doctors.doctor",
+    "pk": 2,
+    "fields": {
+        "first_name": "Мария",
+        "last_name": "Иванова",
+        "patronymic": "Сергеевна",
+        "full_name": "Иванова Мария Сергеевна",
+        "phone_number": "+79265553322",
+        "email": "maria.ivanova@example.com",
+        "patient_category": "child",
+        "clinic": 2,
+        "education": "Российский национальный исследовательский медицинский университет им. Н.И. Пирогова",
+        "experience": 10,
+        "image": "doctors/images/maria_ivanova.jpg",
+        "slug": "ivanova-mariia-sergeevna",
+        "specialty": [
+            50,
+            73
+        ],
+        "doctor_category": [
+            6,
+            3
+        ]
+    }
+},
+{
+    "model": "doctors.doctor",
+    "pk": 3,
+    "fields": {
+        "first_name": "Алексей",
+        "last_name": "Кузнецов",
+        "patronymic": "Викторович",
+        "full_name": "Кузнецов Алексей Викторович",
+        "phone_number": "+79876543210",
+        "email": "alexey.kuznetsov@example.com",
+        "patient_category": "adult",
+        "clinic": 1,
+        "education": "Санкт-Петербургский государственный медицинский университет им. акад. И.П. Павлова",
+        "experience": 20,
+        "image": "doctors/images/alexey_kuznetsov.jpg",
+        "slug": "kuznetsov-aleksei-viktorovich",
+        "specialty": [
+            115
+        ],
+        "doctor_category": [
+            5,
+            2,
+            1
+        ]
+    }
+},
+{
+    "model": "doctors.doctor",
+    "pk": 4,
+    "fields": {
+        "first_name": "Ольга",
+        "last_name": "Петрова",
+        "patronymic": "Андреевна",
+        "full_name": "Петрова Ольга Андреевна",
+        "phone_number": "+79001239876",
+        "email": "olga.petrova@example.com",
+        "patient_category": "adult",
+        "clinic": 3,
+        "education": "Новосибирский государственный медицинский университет",
+        "experience": 12,
+        "image": "doctors/images/olga_petrova.jpg",
+        "slug": "petrova-olga-andreevna",
+        "specialty": [
+            17,
+            25
+        ],
+        "doctor_category": [
+            6
+        ]
+    }
+},
+{
+    "model": "doctors.doctor",
+    "pk": 5,
+    "fields": {
+        "first_name": "Дмитрий",
+        "last_name": "Васильев",
+        "patronymic": "Игоревич",
+        "full_name": "Васильев Дмитрий Игоревич",
+        "phone_number": "+79501112233",
+        "email": "dmitry.vasilyev@example.com",
+        "patient_category": "both",
+        "clinic": 3,
+        "education": "Уральский государственный медицинский университет",
+        "experience": 10,
+        "image": "doctors/images/dmitry_vasilyev.jpg",
+        "slug": "vasilev-dmitrii-igorevich",
+        "specialty": [
+            32,
+            44
+        ],
+        "doctor_category": [
+            5,
+            2
+        ]
+    }
+},
+{
+    "model": "doctors.doctor",
+    "pk": 6,
+    "fields": {
+        "first_name": "Екатерина",
+        "last_name": "Соколова",
+        "patronymic": "Владимировна",
+        "full_name": "Соколова Екатерина Владимировна",
+        "phone_number": "+79605556677",
+        "email": "ekaterina.sokolova@example.com",
+        "patient_category": "adult",
+        "clinic": 3,
+        "education": "Казанский государственный медицинский университет",
+        "experience": 9,
+        "image": "doctors/images/ekaterina_sokolova.jpg",
+        "slug": "sokolova-ekaterina-vladimirovna",
+        "specialty": [
+            60
+        ],
+        "doctor_category": [
+            7
+        ]
+    }
+},
+{
+    "model": "doctors.doctor",
+    "pk": 7,
+    "fields": {
+        "first_name": "Сергей",
+        "last_name": "Михайлов",
+        "patronymic": "Олегович",
+        "full_name": "Михайлов Сергей Олегович",
+        "phone_number": "+79997775544",
+        "email": "sergey.mikhaylov@example.com",
+        "patient_category": "adult",
+        "clinic": 1,
+        "education": "Саратовский государственный медицинский университет",
+        "experience": 14,
+        "image": "doctors/images/sergey_mikhaylov.jpg",
+        "slug": "mikhailov-sergei-olegovich",
+        "specialty": [
+            108
+        ],
+        "doctor_category": [
+            6
+        ]
+    }
+},
+{
+    "model": "doctors.doctor",
+    "pk": 8,
+    "fields": {
+        "first_name": "Анастасия",
+        "last_name": "Федорова",
+        "patronymic": "Артемовна",
+        "full_name": "Федорова Анастасия Артемовна",
+        "phone_number": "+79886664455",
+        "email": "anastasia.fedorova@example.com",
+        "patient_category": "both",
+        "clinic": 3,
+        "education": "Алтайский государственный медицинский университет",
+        "experience": 7,
+        "image": "doctors/images/anastasia_fedorova.jpg",
+        "slug": "fedorova-anastasiia-artemovna",
+        "specialty": [
+            29
+        ],
+        "doctor_category": [
+            5
+        ]
+    }
+},
+{
+    "model": "doctors.doctor",
+    "pk": 9,
+    "fields": {
+        "first_name": "Николай",
+        "last_name": "Попов",
+        "patronymic": "Евгеньевич",
+        "full_name": "Попов Николай Евгеньевич",
+        "phone_number": "+79778889966",
+        "email": "nikolay.popov@example.com",
+        "patient_category": "both",
+        "clinic": 3,
+        "education": "Самарский государственный медицинский университет",
+        "experience": 11,
+        "image": "doctors/images/nikolay_popov.jpg",
+        "slug": "popov-nikolai-evgenevich",
+        "specialty": [
+            65
+        ],
+        "doctor_category": [
+            6
+        ]
+    }
+},
+{
+    "model": "doctors.doctor",
+    "pk": 10,
+    "fields": {
+        "first_name": "Виктория",
+        "last_name": "Козлова",
+        "patronymic": "Павловна",
+        "full_name": "Козлова Виктория Павловна",
+        "phone_number": "+79998887766",
+        "email": "viktoria.kozlova@example.com",
+        "patient_category": "child",
+        "clinic": 2,
+        "education": "Дальневосточный государственный медицинский университет",
+        "experience": 13,
+        "image": "doctors/images/viktoria_kozlova.jpg",
+        "slug": "kozlova-viktoriia-pavlovna",
+        "specialty": [
+            35
+        ],
+        "doctor_category": [
+            5,
+            4
+        ]
+    }
+},
+{
+    "model": "doctors.doctorservice",
+    "pk": 1,
+    "fields": {
+        "doctor": 5,
+        "service": 16,
+        "price": "2000.00",
+        "duration": "01:00:00"
+    }
+},
+{
+    "model": "doctors.doctorservice",
+    "pk": 2,
+    "fields": {
+        "doctor": 5,
+        "service": 17,
+        "price": "1000.00",
+        "duration": "00:15:00"
+    }
+},
+{
+    "model": "doctors.doctorservice",
+    "pk": 3,
+    "fields": {
+        "doctor": 5,
+        "service": 18,
+        "price": "5000.00",
+        "duration": "00:15:00"
+    }
+},
+{
+    "model": "doctors.doctorservice",
+    "pk": 4,
+    "fields": {
+        "doctor": 2,
+        "service": 7,
+        "price": "2000.00",
+        "duration": "01:00:00"
+    }
+},
+{
+    "model": "doctors.doctorservice",
+    "pk": 5,
+    "fields": {
+        "doctor": 2,
+        "service": 8,
+        "price": "1800.00",
+        "duration": "01:00:00"
+    }
+},
+{
+    "model": "doctors.doctorservice",
+    "pk": 6,
+    "fields": {
+        "doctor": 2,
+        "service": 53,
+        "price": "3000.00",
+        "duration": "00:10:00"
+    }
+},
+{
+    "model": "doctors.doctorservice",
+    "pk": 7,
+    "fields": {
+        "doctor": 2,
+        "service": 52,
+        "price": "1500.00",
+        "duration": "00:30:00"
+    }
+},
+{
+    "model": "doctors.doctorservice",
+    "pk": 8,
+    "fields": {
+        "doctor": 10,
+        "service": 57,
+        "price": "2500.00",
+        "duration": "01:00:00"
+    }
+},
+{
+    "model": "doctors.doctorservice",
+    "pk": 9,
+    "fields": {
+        "doctor": 10,
+        "service": 56,
+        "price": "1500.00",
+        "duration": "01:00:00"
+    }
+},
+{
+    "model": "doctors.doctorservice",
+    "pk": 10,
+    "fields": {
+        "doctor": 10,
+        "service": 55,
+        "price": "2300.00",
+        "duration": "00:30:00"
+    }
+},
+{
+    "model": "doctors.doctorservice",
+    "pk": 11,
+    "fields": {
+        "doctor": 3,
+        "service": 37,
+        "price": "2000.00",
+        "duration": "00:30:00"
+    }
+},
+{
+    "model": "doctors.doctorservice",
+    "pk": 12,
+    "fields": {
+        "doctor": 3,
+        "service": 39,
+        "price": "2000.00",
+        "duration": "00:30:00"
+    }
+},
+{
+    "model": "doctors.doctorservice",
+    "pk": 13,
+    "fields": {
+        "doctor": 7,
+        "service": 27,
+        "price": "1500.00",
+        "duration": "00:30:00"
+    }
+},
+{
+    "model": "doctors.doctorservice",
+    "pk": 14,
+    "fields": {
+        "doctor": 7,
+        "service": 25,
+        "price": "2000.00",
+        "duration": "00:45:00"
+    }
+},
+{
+    "model": "doctors.doctorservice",
+    "pk": 15,
+    "fields": {
+        "doctor": 7,
+        "service": 26,
+        "price": "2200.00",
+        "duration": "00:20:00"
+    }
+},
+{
+    "model": "doctors.doctorservice",
+    "pk": 16,
+    "fields": {
+        "doctor": 4,
+        "service": 58,
+        "price": "2000.00",
+        "duration": "00:30:00"
+    }
+},
+{
+    "model": "doctors.doctorservice",
+    "pk": 17,
+    "fields": {
+        "doctor": 4,
+        "service": 60,
+        "price": "3000.00",
+        "duration": "01:00:00"
+    }
+},
+{
+    "model": "doctors.doctorservice",
+    "pk": 18,
+    "fields": {
+        "doctor": 4,
+        "service": 59,
+        "price": "1000.00",
+        "duration": "00:30:00"
+    }
+},
+{
+    "model": "doctors.doctorservice",
+    "pk": 19,
+    "fields": {
+        "doctor": 9,
+        "service": 32,
+        "price": "2000.00",
+        "duration": "01:00:00"
+    }
+},
+{
+    "model": "doctors.doctorservice",
+    "pk": 20,
+    "fields": {
+        "doctor": 9,
+        "service": 31,
+        "price": "2500.00",
+        "duration": "01:00:00"
+    }
+},
+{
+    "model": "doctors.doctorservice",
+    "pk": 21,
+    "fields": {
+        "doctor": 9,
+        "service": 33,
+        "price": "1500.00",
+        "duration": "00:30:00"
+    }
+},
+{
+    "model": "doctors.doctorservice",
+    "pk": 22,
+    "fields": {
+        "doctor": 1,
+        "service": 16,
+        "price": "3000.00",
+        "duration": "00:30:00"
+    }
+},
+{
+    "model": "doctors.doctorservice",
+    "pk": 23,
+    "fields": {
+        "doctor": 1,
+        "service": 18,
+        "price": "5000.00",
+        "duration": "00:30:00"
+    }
+},
+{
+    "model": "doctors.doctorservice",
+    "pk": 24,
+    "fields": {
+        "doctor": 1,
+        "service": 17,
+        "price": "1000.00",
+        "duration": "00:30:00"
+    }
+},
+{
+    "model": "doctors.doctorservice",
+    "pk": 25,
+    "fields": {
+        "doctor": 6,
+        "service": 43,
+        "price": "2100.00",
+        "duration": "00:45:00"
+    }
+},
+{
+    "model": "doctors.doctorservice",
+    "pk": 26,
+    "fields": {
+        "doctor": 6,
+        "service": 45,
+        "price": "3000.00",
+        "duration": "01:00:00"
+    }
+},
+{
+    "model": "doctors.doctorservice",
+    "pk": 27,
+    "fields": {
+        "doctor": 6,
+        "service": 44,
+        "price": "3700.00",
+        "duration": "00:30:00"
+    }
+},
+{
+    "model": "doctors.doctorservice",
+    "pk": 28,
+    "fields": {
+        "doctor": 8,
+        "service": 29,
+        "price": "800.00",
+        "duration": "00:20:00"
+    }
+},
+{
+    "model": "doctors.doctorservice",
+    "pk": 29,
+    "fields": {
+        "doctor": 8,
+        "service": 28,
+        "price": "3500.00",
+        "duration": "00:30:00"
+    }
+},
+{
+    "model": "doctors.doctorservice",
+    "pk": 30,
+    "fields": {
+        "doctor": 8,
+        "service": 30,
+        "price": "990.00",
+        "duration": "00:30:00"
+    }
+},
+{
+    "model": "doctors.appointment",
+    "pk": 20,
+    "fields": {
+        "user": 1,
+        "service": 1,
+        "appointment_time": "2025-04-04T06:18:31Z",
+        "status": "completed",
+        "created_at": "2025-03-31T22:53:08.214Z"
+    }
+}
+]
