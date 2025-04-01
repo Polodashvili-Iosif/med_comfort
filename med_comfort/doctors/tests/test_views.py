@@ -24,3 +24,34 @@ class TestDoctorListView:
         assert list(response.context['doctors']) == list(
             doctors[:response.context['page_obj'].paginator.per_page]
         )
+
+
+@pytest.mark.django_db
+class TestDoctorDetailView:
+    def test_returns_404_for_invalid_slug(self, client):
+        invalid_slug = 'invalid_slug'
+        url = reverse(
+            'doctors:doctor_detail', kwargs={'slug': invalid_slug}
+        )
+        response = client.get(url)
+        assert response.status_code == 404
+
+    def test_page_accessible(self, client, load_doctors_data, first_doctor):
+        response = client.get(reverse(
+            'doctors:doctor_detail', kwargs={'slug': first_doctor.slug}
+        ))
+        assert response.status_code == 200
+
+    def test_uses_correct_template(
+            self, client, load_doctors_data, first_doctor
+    ):
+        response = client.get(reverse(
+            'doctors:doctor_detail', kwargs={'slug': first_doctor.slug}
+        ))
+        assertTemplateUsed(response, 'doctors/doctor_detail.html')
+
+    def test_context_data(self, client, load_doctors_data, first_doctor):
+        response = client.get(reverse(
+            'doctors:doctor_detail', kwargs={'slug': first_doctor.slug}
+        ))
+        assert response.context['doctor'] == first_doctor
