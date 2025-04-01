@@ -10,5 +10,10 @@ urlpatterns = [
         '<slug:slug>/',
         views.DoctorDetailView.as_view(),
         name='doctor_detail'
-    )
+    ),
+    path(
+        'select_appointment_time/<int:pk>/',
+        views.select_appointment_time,
+        name='select_appointment_time'
+    ),
 ]
