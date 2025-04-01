@@ -110,4 +110,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+
 FILTERS_EMPTY_CHOICE_LABEL = 'Все'
+
+
+AUTH_USER_MODEL = "users.User"

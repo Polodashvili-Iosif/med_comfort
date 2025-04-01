@@ -110,7 +110,11 @@ class TestSelectAppointmentTime:
         self, client, load_doctors_data, first_doctorservice
     ):
         user = User.objects.create_user(
-            username="testauthuser2", password="testpass"
+            email="testauthuser2@example.com",
+            password="testpass",
+            gender='M',
+            birth_date='2000-01-01',
+            phone_number='+79991234567'
         )
         client.force_login(user)
         appointment_time = (
