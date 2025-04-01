@@ -18,7 +18,6 @@ class ServiceCategory(models.Model):
 class Service(models.Model):
     name = models.CharField('Название услуги', max_length=200, unique=True)
     description = models.TextField('Описание')
-    duration = models.DurationField('Продолжительность', blank=True, null=True)
     category = models.ForeignKey(
         ServiceCategory,
         on_delete=models.CASCADE,

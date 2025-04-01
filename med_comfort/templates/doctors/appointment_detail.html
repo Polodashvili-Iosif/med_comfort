@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% load thumbnail %}
+{% load custom_filters %}
+
+{% block title %}Запись на приём{% endblock %}
+
+{% block content %}
+  <div class="container mt-5 fs-5 mb-5">
+    <h1 class="mb-4">Запись на приём</h1>
+
+    <div class="card mb-4">
+      <div class="card-body">
+        <h4 class="card-title">{{ appointment.service.service.name }}</h4>
+        <p class="card-text"><strong>Доктор:</strong>
+          <a href="{% url 'doctors:doctor_detail' appointment.service.doctor.slug %}" class="link-success link-underline-opacity-0 link-underline-opacity-75-hover">{{ appointment.service.doctor }}</a>
+        </p>
+        <p class="card-text"><strong>Клиника:</strong>
+          <a href="{% url 'clinics:clinic_detail' appointment.service.doctor.clinic.pk %}" class="link-success link-underline-opacity-0 link-underline-opacity-75-hover">{{ appointment.service.doctor.clinic.name }}</a>
+        </p>
+        <p class="card-text"><strong>Стоимость:</strong> {{ appointment.service.price|floatformat:"0" }} руб.</p>
+        <p class="card-text"><strong>Дата и время:</strong> {{ appointment.appointment_time }}</p>
+        <p class="card-text"><strong>Статус:</strong>
+          {% if appointment.status == 'pending' %}
+            <span class="badge bg-warning text-dark">Ожидание подтверждения</span>
+          {% elif appointment.status == 'confirmed' %}
+            <span class="badge bg-success">Подтверждена</span>
+          {% elif appointment.status == 'cancelled' %}
+            <span class="badge bg-danger">Отменена</span>
+          {% elif appointment.status == 'completed' %}
+            <span class="badge bg-primary">Завершена</span>
+          {% endif %}
+        </p>
+      </div>
+    </div>
+  </div>
+{% endblock %}

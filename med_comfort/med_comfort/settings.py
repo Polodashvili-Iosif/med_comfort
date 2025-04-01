@@ -25,11 +25,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'django_filters',
     'phonenumber_field',
+    'sorl.thumbnail',
 
+    'clinics',
+    'doctors',
     'main',
     'services',
-    'clinics'
 ]
 
 MIDDLEWARE = [
@@ -105,3 +108,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+FILTERS_EMPTY_CHOICE_LABEL = 'Все'
