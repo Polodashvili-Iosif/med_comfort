@@ -37,7 +37,7 @@
             </ul>
           </div>
         {% else %}
-          <a href="#" class="btn btn-outline-success mx-1">Войти</a>
+          <a href="{% url 'users:login' %}" class="btn btn-outline-success mx-1">Войти</a>
           <a href="{% url 'users:signup' %}" class="btn btn-outline-primary mx-1">Зарегистрироваться</a>
         {% endif %}
       </div>

@@ -195,9 +195,9 @@ class TestSelectAppointmentTime:
             )
         )
         start_hour = 9 if today_datetime.hour < 9 else today_datetime.hour + 1
-        available_times_amount = (18 - start_hour) * (
+        available_times_amount = max((18 - start_hour) * (
             60 / (first_doctorservice.duration.total_seconds() / 60)
-        )
+        ), 0)
         assert 'available_times' in response.context
         assert isinstance(response.context['available_times'], list)
         assert (
