@@ -16,4 +16,9 @@ urlpatterns = [
         views.select_appointment_time,
         name='select_appointment_time'
     ),
+    path(
+        'appointment/<int:pk>/',
+        views.AppointmentView.as_view(),
+        name='appointment_detail'
+    ),
 ]

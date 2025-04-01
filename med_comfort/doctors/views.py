@@ -3,7 +3,7 @@ import datetime
 from django.contrib.auth.decorators import login_required
 from django.core.exceptions import ValidationError
 from django.http import HttpResponseRedirect
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse
 from django.utils.timezone import make_aware
 from django.views.generic import DetailView
@@ -99,6 +99,8 @@ def select_appointment_time(request, pk):
                 appointment_time=appointment_datetime
             )
             appointment.save()
+
+            return redirect('doctors:appointment_detail', pk=appointment.pk)
         except ValidationError:
             pass
 
@@ -111,3 +113,9 @@ def select_appointment_time(request, pk):
             'selected_date': selected_date
         }
     )
+
+
+class AppointmentView(DetailView):
+    model = Appointment
+    template_name = 'doctors/appointment_detail.html'
+    context_object_name = 'appointment'
