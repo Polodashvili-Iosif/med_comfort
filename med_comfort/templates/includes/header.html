@@ -20,17 +20,26 @@
           <input class="form-control me-2" type="search" placeholder="Поиск..." aria-label="Search">
           <button class="btn btn-outline-success" type="submit">Поиск</button>
         </form>
-
-        <div class="dropdown text-end">
-          <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-            <i class="fa-regular fa-user" style="font-size: 32px;"></i>
-          </a>
-          <ul class="dropdown-menu text-small" style="">
-            <li><a class="dropdown-item" href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Профиль</font></font></a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Выход</font></font></a></li>
-          </ul>
-        </div>
+        {% if user.is_authenticated %}
+          <div class="dropdown text-end">
+            <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fa-regular fa-user" style="font-size: 32px;"></i>
+            </a>
+            <ul class="dropdown-menu text-small" style="">
+              <li><a class="dropdown-item" href="#">Профиль</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li>
+                <form action="#" method="post">
+                    {% csrf_token %}
+                    <button class="dropdown-item" type="submit">Выйти</button>
+                </form>
+              </li>
+            </ul>
+          </div>
+        {% else %}
+          <a href="#" class="btn btn-outline-success mx-1">Войти</a>
+          <a href="{% url 'users:signup' %}" class="btn btn-outline-primary mx-1">Зарегистрироваться</a>
+        {% endif %}
       </div>
     </nav>
   </div>
