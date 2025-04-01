@@ -116,7 +116,7 @@ class TestSelectAppointmentTime:
         appointment_time = (
             datetime.datetime.now() + datetime.timedelta(days=1)
         ).strftime('%Y-%m-%d %H:%M')
-        client.post(
+        response = client.post(
             reverse(
                 'doctors:select_appointment_time',
                 kwargs={'pk': first_doctorservice.pk}
@@ -125,6 +125,13 @@ class TestSelectAppointmentTime:
         assert Appointment.objects.filter(
             user=user, service=first_doctorservice
         ).exists()
+        appointment = Appointment.objects.get(
+            user=user, service=first_doctorservice
+        )
+        assert response.status_code == 302
+        assert response.url == reverse(
+            'doctors:appointment_detail', kwargs={'pk': appointment.pk}
+        )
 
     def test_create_invalid_appointment(
             self,
