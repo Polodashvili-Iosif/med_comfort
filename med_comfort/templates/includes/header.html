@@ -29,7 +29,7 @@
               <li><a class="dropdown-item" href="#">Профиль</a></li>
               <li><hr class="dropdown-divider"></li>
               <li>
-                <form action="#" method="post">
+                <form action="{% url 'users:logout' %}" method="post">
                     {% csrf_token %}
                     <button class="dropdown-item" type="submit">Выйти</button>
                 </form>
