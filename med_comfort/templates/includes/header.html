@@ -26,7 +26,7 @@
               <i class="fa-regular fa-user" style="font-size: 32px;"></i>
             </a>
             <ul class="dropdown-menu text-small" style="">
-              <li><a class="dropdown-item" href="#">Профиль</a></li>
+              <li><a class="dropdown-item" href="{% url 'users:profile' %}">Профиль</a></li>
               <li><hr class="dropdown-divider"></li>
               <li>
                 <form action="{% url 'users:logout' %}" method="post">

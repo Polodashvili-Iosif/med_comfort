@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% block title %}Профиль пользователя{% endblock %}
+{% block content %}
+  <div class="container mt-5">
+    <div class="card mx-auto" style="max-width: 600px;">
+      <div class="card-header text-center">
+        <h4>Профиль пользователя</h4>
+      </div>
+      <div class="card-body">
+        <p><strong>Фамилия:</strong> {{ user.last_name }}</p>
+        <p><strong>Имя:</strong> {{ user.first_name }}</p>
+        <p><strong>Отчество:</strong>
+          {% if user.patronymic %}
+            {{ user.patronymic }}
+          {% else%}
+            Не указано
+          {% endif %}
+        </p>
+        <p><strong>Email:</strong> {{ user.email }}</p>
+        <p><strong>Пол:</strong> {{ user.get_gender_display }}</p>
+        <p><strong>Дата рождения:</strong> {{ user.birth_date }}</p>
+        <p><strong>Номер телефона:</strong> {{ user.phone_number }}</p>
+      </div>
+      <div class="card-footer text-center">
+        <div class="row row-cols-2">
+          <div class="col">
+            <a href="#" class="btn btn-success">Редактировать</a>
+          </div>
+          <div class="col">
+            <form action="{% url 'users:logout' %}" method="post">
+              {% csrf_token %}
+              <button class="btn btn-danger" type="submit">Выйти</button>
+            </form>
+          </div>
+        </div>
+    </div>
+  </div>
+  <div class="container mt-3">
+    <div class="card mx-auto" style="max-width: 600px;">
+      <div class="card-header text-center">
+        <h5>Записи на приём</h5>
+      </div>
+      {% if user.appointments.all %}
+        <ul class="list-group list-group-flush">
+          {% for appointment in user.appointments.all %}
+            <li class="list-group-item list-group-item-action align-items-stretch">
+              <div class="row row-cols-2">
+                <div class="col">
+                  <a href="{% url 'doctors:appointment_detail' appointment.pk %}" class="text-black link-underline-success link-underline-opacity-0 link-underline-opacity-75-hover stretched-link">
+                    {{ appointment.service.service.name }}
+                  </a>
+                </div>
+                <div class="col">
+                  {{ appointment.appointment_time }}
+                </div>
+                <div class="col">
+                  {{ appointment.service.price|floatformat:"0" }} руб.
+                </div>
+                <div class="col">
+                  {% if appointment.status == 'pending' %}
+                    <span class="badge bg-warning text-dark">Ожидание подтверждения</span>
+                  {% elif appointment.status == 'confirmed' %}
+                    <span class="badge bg-success">Подтверждена</span>
+                  {% elif appointment.status == 'cancelled' %}
+                    <span class="badge bg-danger">Отменена</span>
+                  {% elif appointment.status == 'completed' %}
+                    <span class="badge bg-primary">Завершена</span>
+                  {% endif %}
+                </div>
+              </div>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% else%}
+        Нет записей на приём
+      {% endif %}
+    </div>
+  </div>
+{% endblock %}
