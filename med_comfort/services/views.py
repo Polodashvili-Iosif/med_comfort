@@ -6,8 +6,10 @@ from .models import Service, ServiceCategory
 
 
 def services_list(request):
-    service_catigories = ServiceCategory.objects.all()
-    services = Service.objects.all()
+    service_catigories = ServiceCategory.objects.filter(
+        services__doctor_services__isnull=False
+    ).distinct()
+    services = Service.objects.filter(doctor_services__isnull=False).distinct()
     doctors = Doctor.objects.all()[:6]
     popular_services = [doctor.services.first() for doctor in doctors]
     context = {
@@ -20,8 +22,11 @@ def services_list(request):
 
 def category_detail(request, slug):
     category = get_object_or_404(ServiceCategory, slug=slug)
+    services = category.services.filter(
+        doctor_services__isnull=False
+    ).distinct()
     context = {
-        'services': category.services.all(),
+        'services': services,
         'category': category
     }
     return render(request, 'services/category_detail.html', context)
