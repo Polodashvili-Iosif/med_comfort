@@ -24,7 +24,7 @@
       <div class="card-footer text-center">
         <div class="row row-cols-2">
           <div class="col">
-            <a href="#" class="btn btn-success">Редактировать</a>
+            <a href="{% url 'users:profile_edit' %}" class="btn btn-success">Редактировать</a>
           </div>
           <div class="col">
             <form action="{% url 'users:logout' %}" method="post">
