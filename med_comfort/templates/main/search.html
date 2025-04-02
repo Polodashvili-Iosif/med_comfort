@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% load thumbnail %}
+
+{% block title %}Поиск{% endblock %}
+
+{% block content %}
+  <div class="container mt-5 fs-5">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <form class="d-flex mb-4" role="search">
+          <input class="form-control me-2" type="search" placeholder="Найти услуги, клиники, врачей" aria-label="Search" name="q" value="{{ query }}">
+          <button class="btn bg-success text-white" type="submit">Поиск</button>
+        </form>
+      </div>
+    </div>
+
+    {% if services or doctors or clinics %}
+      {% if services %}
+        <h2 class="text-center mb-4">Услуги</h2>
+        {% include 'includes/services_list.html' %}
+      {% endif %}
+
+      {% if doctors %}
+        <h2 class="text-center mb-4">Врачи</h2>
+        {% include 'includes/doctors_list.html' %}
+      {% endif %}
+
+      {% if clinics %}
+        <h2 class="text-center mb-4">Клиники</h2>
+        {% include 'includes/clinics_list.html' %}
+      {% endif %}
+    {% else %}
+      <h1>Ничего не найдено</h1>
+    {% endif %}
+  </div>
+{% endblock %}

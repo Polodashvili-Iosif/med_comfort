@@ -1,0 +1,10 @@
+<div class="row">
+  {% for service in popular_services %}
+    <div class="col-md-4 mb-3">
+        <a href="{% url 'services:service_detail' service.slug %}" class="link-success link-underline-opacity-0 link-underline-opacity-75-hover">
+          <strong>{{ service }}</strong>
+        </a>
+        <p>{{ service.description }}</p>
+    </div>
+  {% endfor %}
+</div>

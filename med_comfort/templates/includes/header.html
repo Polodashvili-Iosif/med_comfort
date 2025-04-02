@@ -16,8 +16,8 @@
           <li><a href="{% url 'clinics:clinics_list' %}" class="px-2 text-black link-underline-success link-underline-opacity-0 link-underline-opacity-75-hover"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Клиники</font></font></a></li>
         </ul>
 
-        <form class="d-flex mb-lg-0 me-lg-3" role="search">
-          <input class="form-control me-2" type="search" placeholder="Поиск..." aria-label="Search">
+        <form action="{% url 'main:search' %}" class="d-flex mb-lg-0 me-lg-3" role="search">
+          <input class="form-control me-2" type="search" placeholder="Поиск..." aria-label="Search" name="q">
           <button class="btn btn-outline-success" type="submit">Поиск</button>
         </form>
         {% if user.is_authenticated %}

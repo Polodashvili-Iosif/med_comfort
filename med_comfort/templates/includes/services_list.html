@@ -1,0 +1,9 @@
+<div class="row row-cols-4">
+  {% for service in services %}
+    <div class="col mb-3">
+      <a href="{% url 'services:service_detail' service.slug %}" class="text-black link-underline-success link-underline-opacity-0 link-underline-opacity-75-hover">
+        {{ service.name }}
+      </a>
+    </div>
+  {% endfor %}
+</div>
