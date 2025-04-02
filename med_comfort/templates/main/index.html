@@ -22,42 +22,14 @@
 
     <h3 class="text-center mb-4">Популярные услуги</h3>
     <div class="row">
+      {% for service in services %}
       <div class="col-md-4 mb-3">
-        <a href="#" class="link-success link-underline-opacity-0 link-underline-opacity-75-hover">
-          <strong>Консультация терапевта</strong>
-        </a>
-        <p>Получите квалифицированную консультацию у терапевта.</p>
+          <a href="{% url 'services:service_detail' service.slug %}" class="link-success link-underline-opacity-0 link-underline-opacity-75-hover">
+            <strong>{{ service }}</strong>
+          </a>
+          <p>{{ service.description }}</p>
       </div>
-      <div class="col-md-4 mb-3">
-        <a href="#" class="link-success link-underline-opacity-0 link-underline-opacity-75-hover">
-          <strong>Диагностика и анализы</strong>
-        </a>
-        <p>Все виды анализов и обследований.</p>
-      </div>
-      <div class="col-md-4 mb-3">
-        <a href="#" class="link-success link-underline-opacity-0 link-underline-opacity-75-hover">
-          <strong>УЗИ диагностика</strong>
-        </a>
-        <p>Профессиональная диагностика с использованием УЗИ.</p>
-      </div>
-      <div class="col-md-4 mb-3">
-        <a href="#" class="link-success link-underline-opacity-0 link-underline-opacity-75-hover">
-          <strong>МРТ</strong>
-        </a>
-        <p>Безопасное и точное исследование для диагностики заболеваний внутренних органов и тканей.</p>
-      </div>
-      <div class="col-md-4 mb-3">
-        <a href="#" class="link-success link-underline-opacity-0 link-underline-opacity-75-hover">
-          <strong>Вакцинация</strong>
-        </a>
-        <p>Прививки для профилактики различных заболеваний.</p>
-      </div>
-      <div class="col-md-4 mb-3">
-        <a href="#" class="link-success link-underline-opacity-0 link-underline-opacity-75-hover">
-          <strong>Массаж</strong>
-        </a>
-        <p>Профессиональные услуги массажа для оздоровления.</p>
-      </div>
+      {% endfor %}
     </div>
   </div>
 {% endblock %}
