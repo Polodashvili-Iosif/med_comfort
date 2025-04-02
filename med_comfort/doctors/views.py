@@ -116,7 +116,9 @@ def select_appointment_time(request, pk):
     )
 
 
-class AppointmentView(LoginRequiredMixin, UserPassesTestMixin, DetailView):
+class AppointmentDetailView(
+    LoginRequiredMixin, UserPassesTestMixin, DetailView
+):
     model = Appointment
     template_name = 'doctors/appointment_detail.html'
     context_object_name = 'appointment'

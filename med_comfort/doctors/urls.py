@@ -18,7 +18,7 @@ urlpatterns = [
     ),
     path(
         'appointment/<int:pk>/',
-        views.AppointmentView.as_view(),
+        views.AppointmentDetailView.as_view(),
         name='appointment_detail'
     ),
 ]

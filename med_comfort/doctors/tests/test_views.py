@@ -228,3 +228,38 @@ class TestSelectAppointmentTime:
         assert (
             len(response.context['available_times']) == available_times_amount
         )
+
+
+@pytest.mark.django_db
+class TestAppointmentDetailView:
+    def test_page_accessible(
+        self, auth_client, load_doctors_data, first_appointment
+    ):
+        response = auth_client.get(
+            reverse(
+                'doctors:appointment_detail',
+                kwargs={'pk': first_appointment.pk}
+            )
+        )
+        assert response.status_code == 200
+
+    def test_redirect_not_auth_client(
+            self, client, load_doctors_data, first_appointment
+    ):
+        response = client.get(
+            reverse(
+                'doctors:appointment_detail',
+                kwargs={'pk': first_appointment.pk}
+            )
+        )
+        assert response.status_code == 302
+
+    def test_user_correct_template(
+            self, auth_client, load_doctors_data, first_appointment
+    ):
+        response = auth_client.get(
+            reverse(
+                'doctors:appointment_detail',
+                kwargs={'pk': first_appointment.pk})
+        )
+        assertTemplateUsed(response, 'doctors/appointment_detail.html')
