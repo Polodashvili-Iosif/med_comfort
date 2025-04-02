@@ -6,5 +6,11 @@
   <div class="container mt-5 fs-5">
     <h2>{{ service.name }}</h2>
     <p>{{ service.description }}</p>
+    {% if doctors %}
+      <h2 class="text-center mb-4">Врачи предоставляющие данную услугу</h2>
+      {% include 'includes/doctors_list.html' %}
+    {% else %}
+      <h3 class="text-center mb-4">Врачей предоставляющих данную услугу не найдено</h3>
+    {% endif %}
   </div>
 {% endblock %}

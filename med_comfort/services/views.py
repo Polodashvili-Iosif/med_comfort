@@ -29,7 +29,9 @@ def category_detail(request, slug):
 
 def service_detail(request, slug):
     service = get_object_or_404(Service, slug=slug)
+    doctors = Doctor.objects.filter(services=service)
     context = {
-        'service': service
+        'service': service,
+        'doctors': doctors,
     }
     return render(request, 'services/service_detail.html', context)
