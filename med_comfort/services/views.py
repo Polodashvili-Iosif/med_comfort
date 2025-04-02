@@ -6,14 +6,14 @@ from .models import Service, ServiceCategory
 
 
 def services_list(request):
-    service_catigories = ServiceCategory.objects.filter(
+    service_categories = ServiceCategory.objects.filter(
         services__doctor_services__isnull=False
     ).distinct()
     services = Service.objects.filter(doctor_services__isnull=False).distinct()
     doctors = Doctor.objects.all()[:6]
     popular_services = [doctor.services.first() for doctor in doctors]
     context = {
-        'service_categories': service_catigories,
+        'service_categories': service_categories,
         'services': services,
         'popular_services': popular_services,
     }

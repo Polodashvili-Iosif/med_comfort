@@ -20,8 +20,8 @@ def search(request):
         full_name__icontains=query
     ) if query else Doctor.objects.none()
     services = Service.objects.filter(
-        name__icontains=query
-    ) if query else Service.objects.none()
+        name__icontains=query, doctor_services__isnull=False
+    ).distinct() if query else Service.objects.none()
     clinics = Clinic.objects.filter(
         name__icontains=query
     ) if query else Clinic.objects.none()

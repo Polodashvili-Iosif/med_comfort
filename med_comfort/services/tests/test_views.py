@@ -17,8 +17,12 @@ class TestServiceListView:
 
     def test_context_data(self, client, load_service_data):
         response = client.get(reverse('services:services_list'))
-        services = Service.objects.all()
-        service_categories = ServiceCategory.objects.all()
+        services = Service.objects.filter(
+            doctor_services__isnull=False
+        ).distinct()
+        service_categories = ServiceCategory.objects.filter(
+            services__doctor_services__isnull=False
+        ).distinct()
 
         assert list(response.context['services']) == list(services)
         assert (
@@ -55,7 +59,9 @@ class TestCategoryDetailView:
         response = client.get(reverse(
             'services:category_detail', kwargs={'slug': first_category.slug}
         ))
-        services = first_category.services.all()
+        services = Service.objects.filter(
+            doctor_services__isnull=False
+        ).distinct()
 
         assert list(response.context['services']) == list(services)
 
