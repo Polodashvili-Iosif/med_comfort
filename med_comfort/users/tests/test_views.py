@@ -24,3 +24,23 @@ class TestProfileView:
         client.force_login(first_user)
         response = client.get(reverse('users:profile'))
         assert response.context['user'] == first_user
+
+
+@pytest.mark.django_db
+class TestProfileUpdateView:
+    def test_page_accessible(self, auth_client):
+        response = auth_client.get(reverse('users:profile_edit'))
+        assert response.status_code == 200
+
+    def test_redirect_not_auth_client(self, client):
+        response = client.get(reverse('users:profile_edit'))
+        assert response.status_code == 302
+
+    def test_uses_correct_template(self, auth_client):
+        response = auth_client.get(reverse('users:profile_edit'))
+        assertTemplateUsed(response, 'users/profile_edit.html')
+
+    def test_context_data(self, client, load_users_data, first_user):
+        client.force_login(first_user)
+        response = client.get(reverse('users:profile'))
+        assert response.context['user'] == first_user
