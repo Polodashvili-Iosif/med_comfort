@@ -110,7 +110,11 @@ class TestSelectAppointmentTime:
         self, client, load_doctors_data, first_doctorservice
     ):
         user = User.objects.create_user(
-            username="testauthuser2", password="testpass"
+            email="testauthuser2@example.com",
+            password="testpass",
+            gender='M',
+            birth_date='2000-01-01',
+            phone_number='+79991234567'
         )
         client.force_login(user)
         appointment_time = (
@@ -191,9 +195,9 @@ class TestSelectAppointmentTime:
             )
         )
         start_hour = 9 if today_datetime.hour < 9 else today_datetime.hour + 1
-        available_times_amount = (18 - start_hour) * (
+        available_times_amount = max((18 - start_hour) * (
             60 / (first_doctorservice.duration.total_seconds() / 60)
-        )
+        ), 0)
         assert 'available_times' in response.context
         assert isinstance(response.context['available_times'], list)
         assert (

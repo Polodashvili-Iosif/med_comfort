@@ -1,0 +1,23 @@
+[
+{
+    "model": "users.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$870000$gRpCwhGJohQXs0nCO50El1$cTODI4ZRGA6osJ3puvwwboRSNXoBFBTwDr2yLwDQU44=",
+        "last_login": null,
+        "is_superuser": true,
+        "first_name": "Иосиф",
+        "last_name": "Полодашвили",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2025-04-01T12:59:25.557Z",
+        "email": "iosif.polodashvili@mail.ru",
+        "patronymic": null,
+        "gender": "M",
+        "birth_date": "2001-03-05",
+        "phone_number": "+79528185201",
+        "groups": [],
+        "user_permissions": []
+    }
+}
+]

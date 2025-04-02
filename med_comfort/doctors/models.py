@@ -158,7 +158,9 @@ class Appointment(models.Model):
         (COMPLETED, 'Завершена'),
     ]
 
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name='appointments'
+    )
     service = models.ForeignKey(
         'DoctorService',
         related_name='appointments',

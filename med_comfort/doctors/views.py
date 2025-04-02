@@ -1,6 +1,7 @@
 import datetime
 
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.core.exceptions import ValidationError
 from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404, redirect, render
@@ -115,7 +116,14 @@ def select_appointment_time(request, pk):
     )
 
 
-class AppointmentView(DetailView):
+class AppointmentView(LoginRequiredMixin, UserPassesTestMixin, DetailView):
     model = Appointment
     template_name = 'doctors/appointment_detail.html'
     context_object_name = 'appointment'
+
+    def test_func(self):
+        appointment = self.get_object()
+        return appointment.user == self.request.user
+
+    def handle_no_permission(self):
+        return redirect("users:profile")
