@@ -9,6 +9,6 @@ class TestUserModel:
             == (
                 f"{first_user.last_name} "
                 f"{first_user.first_name} "
-                f"{first_user.patronymic}"
-            )
+                f"{first_user.patronymic or ''}"
+            ).strip()
         )
