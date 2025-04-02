@@ -49,4 +49,9 @@ urlpatterns = [
         name='password_reset_complete'
     ),
     path('profile/', views.profile_view, name='profile'),
+    path(
+        'profile/edit/',
+        views.ProfileUpdateView.as_view(),
+        name='profile_edit'
+    ),
 ]
