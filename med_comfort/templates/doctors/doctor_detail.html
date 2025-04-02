@@ -26,7 +26,7 @@
       </div>
       <div class="col-12 col-md-8">
         <h2>Информация о специалисте</h2>
-        <p><strong>Стаж работы:</strong> {{ doctor.experience }}</p>
+        <p><strong>Стаж работы (лет):</strong> {{ doctor.experience }}</p>
         <p><strong>Клиника:</strong> <a href="{% url 'clinics:clinic_detail' doctor.clinic.pk %}" class="link-success link-underline-opacity-0 link-underline-opacity-75-hover">{{ doctor.clinic }}</a></p>
         <p><strong>Ученая степень / Категория / Ученое звание:</strong> {{ doctor.doctor_category.all|join:", "|lower|capfirst }}</p>
         <p><strong>Образование: </strong>{{ doctor.education }}</p>

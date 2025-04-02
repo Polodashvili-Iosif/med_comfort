@@ -11,10 +11,13 @@
       <div class="row g-3">
         <div class="col-12 input-group mb-3">
           {{ filter.form.search|add_attrs:"class=form-control; placeholder=Введите специализацию, имя, фамилию или отчество врача" }}
-          <button type="button" class="btn btn-light" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+          <button type="button" class="btn btn-light d-none d-sm-block" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
             <i class="fa-solid fa-sliders"></i> Уточнить поиск
           </button>
-          <button type="submit" class="btn btn-success">Начать поиск</button>
+          <button type="button" class="btn btn-light d-lg-none" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fa-solid fa-sliders"></i>
+          </button>
+          <button type="submit" class="btn btn-success"><i class="fa-solid fa-magnifying-glass d-lg-none"></i><span class="d-none d-sm-block">Начать поиск</span></button>
         </div>
 
         <div class="collapse {% if request.GET %}show{% endif %} row g-3" id="navbarToggleExternalContent">
