@@ -89,18 +89,24 @@ class TestDoctorDetailView:
 @pytest.mark.django_db
 class TestSelectAppointmentTime:
     def test_page_accessible(
-            self, auth_client, load_doctors_data, first_doctorservice
+            self, client, load_doctors_data, first_doctorservice, first_user
     ):
-        response = auth_client.get(reverse(
+        client.force_login(first_user)
+        response = client.get(reverse(
             'doctors:select_appointment_time',
             kwargs={'pk': first_doctorservice.pk}
         ))
         assert response.status_code == 200
 
     def test_uses_correct_template(
-            self, auth_client, load_doctors_data, first_doctorservice
+            self,
+            client,
+            load_doctors_data,
+            first_doctorservice,
+            first_user
     ):
-        response = auth_client.get(reverse(
+        client.force_login(first_user)
+        response = client.get(reverse(
             'doctors:select_appointment_time',
             kwargs={'pk': first_doctorservice.pk}
         ))
@@ -110,6 +116,7 @@ class TestSelectAppointmentTime:
         self, client, load_doctors_data, first_doctorservice
     ):
         user = User.objects.create_user(
+            id=2,
             email="testauthuser2@example.com",
             password="testpass",
             gender='M',
@@ -166,13 +173,14 @@ class TestSelectAppointmentTime:
         assert Appointment.objects.count() == initial_count
 
     def test_get_past_available_times(
-        self, auth_client, load_doctors_data, first_doctorservice
+        self, client, load_doctors_data, first_doctorservice, first_user
     ):
+        client.force_login(first_user)
         yesterday_date = (
             datetime.date.today() - datetime.timedelta(days=1)
         ).strftime('%Y-%m-%d')
 
-        response = auth_client.get(
+        response = client.get(
             reverse(
                 'doctors:select_appointment_time',
                 kwargs={'pk': first_doctorservice.pk}
@@ -185,10 +193,11 @@ class TestSelectAppointmentTime:
         assert len(response.context['available_times']) == 0
 
     def test_get_today_available_times(
-        self, auth_client, load_doctors_data, first_doctorservice
+        self, client, load_doctors_data, first_doctorservice, first_user
     ):
+        client.force_login(first_user)
         today_datetime = datetime.datetime.today()
-        response = auth_client.get(
+        response = client.get(
             reverse(
                 'doctors:select_appointment_time',
                 kwargs={'pk': first_doctorservice.pk}
@@ -207,13 +216,14 @@ class TestSelectAppointmentTime:
 
     @pytest.mark.django_db
     def test_get_all_available_times(
-        self, auth_client, load_doctors_data, first_doctorservice
+        self, client, load_doctors_data, first_doctorservice, first_user
     ):
+        client.force_login(first_user)
         tomorrow_date = (
             datetime.date.today() + datetime.timedelta(days=365)
         ).strftime('%Y-%m-%d')
 
-        response = auth_client.get(
+        response = client.get(
             reverse(
                 'doctors:select_appointment_time',
                 kwargs={'pk': first_doctorservice.pk}
@@ -233,9 +243,10 @@ class TestSelectAppointmentTime:
 @pytest.mark.django_db
 class TestAppointmentDetailView:
     def test_page_accessible(
-        self, auth_client, load_doctors_data, first_appointment
+        self, client, load_doctors_data, first_appointment, first_user
     ):
-        response = auth_client.get(
+        client.force_login(first_user)
+        response = client.get(
             reverse(
                 'doctors:appointment_detail',
                 kwargs={'pk': first_appointment.pk}
@@ -255,9 +266,10 @@ class TestAppointmentDetailView:
         assert response.status_code == 302
 
     def test_user_correct_template(
-            self, auth_client, load_doctors_data, first_appointment
+            self, client, load_doctors_data, first_appointment, first_user
     ):
-        response = auth_client.get(
+        client.force_login(first_user)
+        response = client.get(
             reverse(
                 'doctors:appointment_detail',
                 kwargs={'pk': first_appointment.pk})

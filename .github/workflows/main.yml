@@ -5,12 +5,28 @@ on: push
 jobs:
   tests:
     runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:13.10
+        env:
+          POSTGRES_USER: med_comfort_user
+          POSTGRES_PASSWORD: med_comfort_password
+          POSTGRES_DB: med_comfort
+          DB_HOST: localhost
+          DB_PORT: 5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 5432:5432
     steps:
       - uses: actions/checkout@v3
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: 3.11
+          python-version: 3.12
 
       - name: Install dependencies
         run: |
@@ -31,6 +47,11 @@ jobs:
       - name: Test with pytest
         env:
           SECRET_KEY: ${{ secrets.SECRET_KEY }}
+          POSTGRES_USER: med_comfort_user
+          POSTGRES_PASSWORD: med_comfort_password
+          POSTGRES_DB: med_comfort
+          DB_HOST: localhost
+          DB_PORT: 5432
         run: |
           pytest med_comfort/ --cov --cov-report=xml --cov-fail-under=80
 

@@ -41,6 +41,7 @@ def load_users_data(db):
 @pytest.fixture
 def load_doctors_data(db):
     User.objects.create_user(
+        id=1,
         email="testuser@example.com",
         password="testpass",
         gender='M',
