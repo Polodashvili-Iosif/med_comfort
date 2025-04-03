@@ -7,7 +7,7 @@
     <div class="row align-items-center">
       <div class="col text-center">
         <h1>{{ clinic.name }}</h1>
-        <button type="button" class="btn btn-success btn-lg mt-4">Записаться на приём</button>
+        <a href="{% url 'doctors:doctors_list' %}?clinic={{ clinic.pk }}" class="btn btn-success btn-lg mt-4">Записаться на приём</a>
       </div>
       <div class="col">
         <img src="{{ clinic.image.url }}" class="card-img-top rounded" alt="Фото">
