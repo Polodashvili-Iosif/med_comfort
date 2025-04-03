@@ -1,0 +1,36 @@
+version: '3.3'
+
+volumes:
+  pg_data_med_comfort:
+  static_med_comfort:
+  media_med_comfort:
+
+services:
+  db:
+    hostname: db
+    image: postgres:13.0-alpine
+    volumes:
+      - pg_data_med_comfort:/var/lib/postgresql/data/
+    env_file:
+      - ./.env
+
+  backend:
+    image: iosifpolodashvili/med_comfort_backend:latest
+    restart: always
+    volumes:
+      - static_med_comfort:/app/staticfiles/
+      - media_med_comfort:/app/media/
+    depends_on:
+      - db
+    env_file:
+      - ./.env
+
+  nginx:
+    image: iosifpolodashvili/med_comfort_nginx:latest
+    volumes:
+      - static_med_comfort:/app/staticfiles/
+      - media_med_comfort:/app/media/
+    ports:
+      - "8000:80"
+    depends_on:
+      - backend
