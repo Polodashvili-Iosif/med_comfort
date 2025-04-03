@@ -1,0 +1,17 @@
+<div class="row row-cols-1 row-cols-md-3 g-2 mb-3">
+  {% for clinic in clinics %}
+    <div class="col d-flex align-items-stretch">
+      <div class="card shadow-sm">
+        <img src="{{ clinic.image.url }}" class="card-img-top" alt="Фото">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">
+            <a href="{% url 'clinics:clinic_detail' clinic.pk %}" class="text-black link-underline-success link-underline-opacity-0 link-underline-opacity-75-hover stretched-link">
+              {{ clinic.name }}
+            </a>
+          </h5>
+          <p>{{ clinic.address }}</p>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>

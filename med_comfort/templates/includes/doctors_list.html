@@ -1,0 +1,28 @@
+{% load thumbnail %}
+
+<div class="row row-cols-1 row-cols-md-4 g-2">
+  {% for doctor in doctors %}
+    <div class="col d-flex align-items-stretch">
+      <div class="card shadow-sm">
+        {% thumbnail doctor.image "800x1200" crop="top" as img %}
+          <a href="{% url 'doctors:doctor_detail' doctor.slug %}">
+            <img src="{{ img.url }}" class="card-img-top" alt="Фото" width="{{ im.width }}" height="{{ im.height }}">
+          </a>
+        {% endthumbnail %}
+        <div class="card-body d-flex flex-column">
+          <a href="{% url 'doctors:doctor_detail' doctor.slug %}" class="text-black fw-bold link-underline-success link-underline-opacity-0 link-underline-opacity-75-hover">
+            <h5 class="card-title">{{ doctor }}</h5>
+          </a>
+          <p class="card-text">{{ doctor.specialty.all|join:", "|lower|capfirst }}</p>
+          <div class="mt-auto">
+            <a href="{% url 'doctors:doctor_detail' doctor.slug %}" class="link-underline link-underline-opacity-0">
+              <div class="d-grid gap-2">
+                <button type="button" class="btn btn-outline-success align-self-end">Подробнее</button>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>

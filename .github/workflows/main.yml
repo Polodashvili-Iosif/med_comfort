@@ -5,30 +5,53 @@ on: push
 jobs:
   tests:
     runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:13.10
+        env:
+          POSTGRES_USER: med_comfort_user
+          POSTGRES_PASSWORD: med_comfort_password
+          POSTGRES_DB: med_comfort
+          DB_HOST: localhost
+          DB_PORT: 5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 5432:5432
     steps:
       - uses: actions/checkout@v3
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: 3.11
+          python-version: 3.12
 
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip 
           pip install flake8 isort pytest pytest-django pytest-cov
-          pip install -r requirements.txt
+          pip install -r med_comfort/requirements.txt
 
       - name: Test with isort
         run: |
-          isort --check-only med_comfort/
+          cd med_comfort/
+          isort --check-only ./
 
       - name: Test with flake8
         run: |
-          flake8 med_comfort/
+          cd med_comfort/
+          flake8 ./
 
       - name: Test with pytest
         env:
           SECRET_KEY: ${{ secrets.SECRET_KEY }}
+          POSTGRES_USER: med_comfort_user
+          POSTGRES_PASSWORD: med_comfort_password
+          POSTGRES_DB: med_comfort
+          DB_HOST: localhost
+          DB_PORT: 5432
         run: |
           pytest med_comfort/ --cov --cov-report=xml --cov-fail-under=80
 
@@ -38,9 +61,68 @@ jobs:
           token: ${{ secrets.CODECOV_TOKEN }}
           fail_ci_if_error: true
 
-  send_message:
+  build_and_push_to_docker_hub:
+    name: Push Docker image to DockerHub
     runs-on: ubuntu-latest
     needs: tests
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v3
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+      - name: Login to Docker
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+      - name: Push to DockerHub backend
+        uses: docker/build-push-action@v4
+        with:
+          context: ./med_comfort/
+          push: true
+          tags: ${{ secrets.DOCKER_USERNAME }}/med_comfort_backend:latest
+      - name: Push to DockerHub nginx
+        uses: docker/build-push-action@v4
+        with:
+          context: ./infra/
+          push: true
+          tags: ${{ secrets.DOCKER_USERNAME }}/med_comfort_nginx:latest
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs:
+      - build_and_push_to_docker_hub
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+      - name: Copy docker-compose.yml via ssh
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USER }}
+          key: ${{ secrets.SSH_KEY }}
+          passphrase: ${{ secrets.SSH_PASSPHRASE }}
+          source: "infra/docker-compose.yml"
+          target: "med_comfort"
+      - name: Executing remote ssh commands to deploy
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USER }}
+          key: ${{ secrets.SSH_KEY }}
+          passphrase: ${{ secrets.SSH_PASSPHRASE }}
+          script: |
+            cd med_comfort/
+            sudo docker compose -f docker-compose.yml pull
+            sudo docker compose -f docker-compose.yml down
+            sudo docker compose -f docker-compose.yml up -d
+            sudo docker compose -f docker-compose.yml exec backend python manage.py migrate
+            sudo docker compose -f docker-compose.yml exec backend python manage.py collectstatic --no-input 
+            sudo docker compose -f docker-compose.yml exec backend cp -r /app/staticfiles/. /backend_static/
+
+  send_message:
+    runs-on: ubuntu-latest
+    needs: deploy
     steps:
       - name: Send message
         uses: appleboy/telegram-action@master

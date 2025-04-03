@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% load thumbnail %}
+{% load custom_filters %}
+
+{% block title %}{{ doctor.full_name }}{% endblock %}
+
+{% block content %}
+  <div class="container mt-5 fs-5">
+    <h1 class="mb-4">{{ doctor }}</h1>
+    <div class="row mb-3">
+      <div class="col-12 col-md-4">
+        {% thumbnail doctor.image "300x450" crop="top" as img %}
+          <img src="{{ img.url }}" alt="Фото" width="{{ im.width }}" height="{{ im.height }}" class="mb-4">
+        {% endthumbnail %}
+        <p>{{ doctor.specialty.all|join:", "|lower|capfirst }}</p>
+        {% if doctor.patient_category == doctor.ADULT %}
+          <i class="fa-solid fa-person"></i>
+        {% elif doctor.patient_category == doctor.CHILD %}
+          <i class="fa-solid fa-children"></i>
+        {% else %}
+          <i class="fa-solid fa-person"></i>
+          <i class="fa-solid fa-children"></i>
+        {% endif %}
+        {{ doctor.get_patient_category_display }}
+      </div>
+      <div class="col-12 col-md-8">
+        <h2>Информация о специалисте</h2>
+        <p><strong>Стаж работы (лет):</strong> {{ doctor.experience }}</p>
+        <p><strong>Клиника:</strong> <a href="{% url 'clinics:clinic_detail' doctor.clinic.pk %}" class="link-success link-underline-opacity-0 link-underline-opacity-75-hover">{{ doctor.clinic }}</a></p>
+        <p><strong>Ученая степень / Категория / Ученое звание:</strong> {{ doctor.doctor_category.all|join:", "|lower|capfirst }}</p>
+        <p><strong>Образование: </strong>{{ doctor.education }}</p>
+        <form method="post">
+          {% csrf_token %}
+          <legend>Выберите услугу:</legend>
+          <table class="table table-hover">
+            {% for service_widget in form.service %}
+              {% with service_obj=form.fields.service.queryset|slice:forloop.counter|slice:"::-1"|first %}
+                <tr>
+                  <td>
+                    <input class="form-check-input" type="radio" name="service" value="{{ service_obj.pk }}" id="{{ service_widget.id_for_label }}">
+                  <td>
+                    <label class="form-check-label" for="{{ service_widget.id_for_label }}">
+                      {{ service_obj.service.name }}
+                    </label>
+                  </td>
+                  <td>
+                     {{ service_obj.price|floatformat:"0" }} руб.
+                  </td>
+                </tr>
+              {% endwith %}
+            {% endfor %}
+          </table>
+          <button type="submit" class="btn btn-success btn-lg mt-4">Записаться на приём</button>
+        </form>
+      </div>
+    </div>
+  </div>
+{% endblock %}

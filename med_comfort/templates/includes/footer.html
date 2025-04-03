@@ -1,22 +1,22 @@
-<footer class="bg-light py-4 mt-auto border-top">
+<footer class="bg-light py-4 mt-auto border-top fs-5">
   <div class="container">
     <div class="row">
       <div class="col-md-4">
         <h5>Контактная информация</h5>
         <ul class="list-unstyled">
           <li><strong>Адрес:</strong> г. Москва, ул. Примерная, д. 10</li>
-          <li><strong>Телефон:</strong> +7 (495) 123-45-67</li>
-          <li><strong>Email:</strong> info@medcomfort.ru</li>
+          <li><strong>Телефон:</strong> <a href="tel:+7 495 123-45-67" class="text-black link-underline-success link-underline-opacity-0 link-underline-opacity-75-hover"> +7 (495) 123-45-67</a></li>
+          <li><strong>Email:</strong><a href="mailto:info@medcomfort.ru" class="text-black link-underline-success link-underline-opacity-0 link-underline-opacity-75-hover"> info@medcomfort.ru</a></li>
         </ul>
       </div>
 
       <div class="col-md-4">
         <h5>Карта сайта</h5>
         <ul class="list-unstyled">
-          <li><a href="{% url 'main:index' %}" class="text-dark">Главная</a></li>
-          <li><a href="#" class="text-dark">Услуги</a></li>
-          <li><a href="#" class="text-dark">Врачи</a></li>
-          <li><a href="#" class="text-dark">Клиники</a></li>
+          <li><a href="{% url 'main:index' %}" class="text-dark link-underline-success link-underline-opacity-0 link-underline-opacity-75-hover">Главная</a></li>
+          <li><a href="{% url 'services:services_list' %}" class="text-dark link-underline-success link-underline-opacity-0 link-underline-opacity-75-hover">Услуги</a></li>
+          <li><a href="{% url 'doctors:doctors_list' %}" class="text-dark link-underline-success link-underline-opacity-0 link-underline-opacity-75-hover">Врачи</a></li>
+          <li><a href="{% url 'clinics:clinics_list' %}" class="text-dark link-underline-success link-underline-opacity-0 link-underline-opacity-75-hover">Клиники</a></li>
         </ul>
       </div>
 

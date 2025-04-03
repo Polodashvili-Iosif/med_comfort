@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}Услуги сети клиник Мед Комфорт{% endblock %}
+
+{% block content %}
+  <div class="container mt-5 fs-5">
+    <h1>Услуги</h1>
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <form action="{% url 'main:search' %}" class="d-flex mb-4" role="search">
+          <input class="form-control me-2" type="search" placeholder="Найти услуги, клиники, врачей" aria-label="Search" name="q">
+          <button class="btn bg-success text-white" type="submit">Поиск</button>
+        </form>
+      </div>
+    </div>
+
+    <h3 class="text-center mb-4">Популярные услуги</h3>
+    {% include 'includes/popular_services.html' %}
+
+    <h3 class="text-center mb-4">Категории услуг</h3>
+    <div class="row row-cols-1 row-cols-md-4">
+      {% for category in service_categories %}
+        <div class="col mb-3">
+          <a href="{% url 'services:category_detail' category.slug %}" class="text-black link-underline-success link-underline-opacity-0 link-underline-opacity-75-hover">
+            {{ category.name }}
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+
+    <h3 class="text-center mb-4">Все услуги</h3>
+    {% include 'includes/services_list.html' %}
+  </div>
+{% endblock %}

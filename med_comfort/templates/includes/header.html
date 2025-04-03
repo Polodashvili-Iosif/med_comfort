@@ -11,26 +11,35 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0 fs-5 ">
-          <li><a href="#" class="nav-link px-2 link-body-emphasis"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Услуги</font></font></a></li>
-          <li><a href="#" class="nav-link px-2 link-body-emphasis"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Врачи</font></font></a></li>
-          <li><a href="#" class="nav-link px-2 link-body-emphasis"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Клиники</font></font></a></li>
+          <li><a href="{% url 'services:services_list' %}" class="px-2 text-black link-underline-success link-underline-opacity-0 link-underline-opacity-75-hover"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Услуги</font></font></a></li>
+          <li><a href="{% url 'doctors:doctors_list' %}" class="px-2 text-black link-underline-success link-underline-opacity-0 link-underline-opacity-75-hover"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Врачи</font></font></a></li>
+          <li><a href="{% url 'clinics:clinics_list' %}" class="px-2 text-black link-underline-success link-underline-opacity-0 link-underline-opacity-75-hover"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Клиники</font></font></a></li>
         </ul>
 
-        <form class="d-flex mb-lg-0 me-lg-3" role="search">
-          <input class="form-control me-2" type="search" placeholder="Поиск..." aria-label="Search">
+        <form action="{% url 'main:search' %}" class="d-flex mb-lg-0 me-lg-3" role="search">
+          <input class="form-control me-2" type="search" placeholder="Поиск..." aria-label="Search" name="q">
           <button class="btn btn-outline-success" type="submit">Поиск</button>
         </form>
-
-        <div class="dropdown text-end">
-          <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-            <i class="fa-regular fa-user" style="font-size: 32px;"></i>
-          </a>
-          <ul class="dropdown-menu text-small" style="">
-            <li><a class="dropdown-item" href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Профиль</font></font></a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Выход</font></font></a></li>
-          </ul>
-        </div>
+        {% if user.is_authenticated %}
+          <div class="dropdown text-end">
+            <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fa-regular fa-user" style="font-size: 32px;"></i>
+            </a>
+            <ul class="dropdown-menu text-small" style="">
+              <li><a class="dropdown-item" href="{% url 'users:profile' %}">Профиль</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li>
+                <form action="{% url 'users:logout' %}" method="post">
+                    {% csrf_token %}
+                    <button class="dropdown-item" type="submit">Выйти</button>
+                </form>
+              </li>
+            </ul>
+          </div>
+        {% else %}
+          <a href="{% url 'users:login' %}" class="btn btn-outline-success mx-1">Войти</a>
+          <a href="{% url 'users:signup' %}" class="btn btn-outline-primary mx-1">Зарегистрироваться</a>
+        {% endif %}
       </div>
     </nav>
   </div>

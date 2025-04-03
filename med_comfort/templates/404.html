@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}Сеть клиник Мед Комфорт{% endblock %}
+
+{% block content %}
+  <div class="container mt-5 fs-5">
+    <h1 class="text-success">Нет такой страницы.</h1>
+    <p>
+      Извините, но такого адреса страницы не существует. Пожалуйста, перейдите на
+      <a href="{% url 'main:index' %}" class="link-success link-underline-opacity-0">главную страницу</a>.
+    </p>
+  </div>
+{% endblock %}

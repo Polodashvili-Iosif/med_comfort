@@ -1,0 +1,782 @@
+[
+{
+    "model": "services.servicecategory",
+    "pk": 1,
+    "fields": {
+        "name": "Косметология",
+        "description": "Услуги по уходу за кожей и внешностью.",
+        "slug": "kosmetologiia"
+    }
+},
+{
+    "model": "services.servicecategory",
+    "pk": 2,
+    "fields": {
+        "name": "Лечебная физкультура",
+        "description": "Физические упражнения для восстановления здоровья.",
+        "slug": "lechebnaia-fizkultura"
+    }
+},
+{
+    "model": "services.servicecategory",
+    "pk": 3,
+    "fields": {
+        "name": "Логопедия",
+        "description": "Исправление речевых дефектов.",
+        "slug": "logopediia"
+    }
+},
+{
+    "model": "services.servicecategory",
+    "pk": 4,
+    "fields": {
+        "name": "Лучевая терапия",
+        "description": "Лечение опухолей с помощью радиации.",
+        "slug": "luchevaia-terapiia"
+    }
+},
+{
+    "model": "services.servicecategory",
+    "pk": 5,
+    "fields": {
+        "name": "Маммология",
+        "description": "Диагностика и лечение заболеваний молочных желез.",
+        "slug": "mammologiia"
+    }
+},
+{
+    "model": "services.servicecategory",
+    "pk": 6,
+    "fields": {
+        "name": "Кардиология",
+        "description": "Лечение и диагностика сердечно-сосудистых заболеваний.",
+        "slug": "kardiologiia"
+    }
+},
+{
+    "model": "services.servicecategory",
+    "pk": 7,
+    "fields": {
+        "name": "Эндокринология",
+        "description": "Диагностика и лечение заболеваний эндокринной системы.",
+        "slug": "endokrinologiia"
+    }
+},
+{
+    "model": "services.servicecategory",
+    "pk": 8,
+    "fields": {
+        "name": "Гастроэнтерология",
+        "description": "Диагностика и лечение заболеваний ЖКТ.",
+        "slug": "gastroenterologiia"
+    }
+},
+{
+    "model": "services.servicecategory",
+    "pk": 9,
+    "fields": {
+        "name": "Урология",
+        "description": "Лечение заболеваний мочеполовой системы.",
+        "slug": "urologiia"
+    }
+},
+{
+    "model": "services.servicecategory",
+    "pk": 10,
+    "fields": {
+        "name": "Дерматология",
+        "description": "Диагностика и лечение кожных заболеваний.",
+        "slug": "dermatologiia"
+    }
+},
+{
+    "model": "services.servicecategory",
+    "pk": 11,
+    "fields": {
+        "name": "Офтальмология",
+        "description": "Лечение и диагностика заболеваний глаз.",
+        "slug": "oftalmologiia"
+    }
+},
+{
+    "model": "services.servicecategory",
+    "pk": 12,
+    "fields": {
+        "name": "Отоларингология",
+        "description": "Лечение уха, горла и носа.",
+        "slug": "otolaringologiia"
+    }
+},
+{
+    "model": "services.servicecategory",
+    "pk": 13,
+    "fields": {
+        "name": "Хирургия",
+        "description": "Оперативное лечение заболеваний.",
+        "slug": "khirurgiia"
+    }
+},
+{
+    "model": "services.servicecategory",
+    "pk": 14,
+    "fields": {
+        "name": "Онкология",
+        "description": "Диагностика и лечение онкологических заболеваний.",
+        "slug": "onkologiia"
+    }
+},
+{
+    "model": "services.servicecategory",
+    "pk": 15,
+    "fields": {
+        "name": "Неврология",
+        "description": "Лечение и диагностика заболеваний нервной системы.",
+        "slug": "nevrologiia"
+    }
+},
+{
+    "model": "services.servicecategory",
+    "pk": 16,
+    "fields": {
+        "name": "Реабилитация",
+        "description": "Восстановление после заболеваний и травм.",
+        "slug": "reabilitatsiia"
+    }
+},
+{
+    "model": "services.servicecategory",
+    "pk": 17,
+    "fields": {
+        "name": "Терапия",
+        "description": "Общее лечение и профилактика заболеваний.",
+        "slug": "terapiia"
+    }
+},
+{
+    "model": "services.servicecategory",
+    "pk": 18,
+    "fields": {
+        "name": "Педиатрия",
+        "description": "Лечение и диагностика заболеваний у детей.",
+        "slug": "pediatriia"
+    }
+},
+{
+    "model": "services.servicecategory",
+    "pk": 19,
+    "fields": {
+        "name": "Стоматология",
+        "description": "Лечение и уход за зубами.",
+        "slug": "stomatologiia"
+    }
+},
+{
+    "model": "services.servicecategory",
+    "pk": 20,
+    "fields": {
+        "name": "Гинекология",
+        "description": "Лечение и диагностика заболеваний женской репродуктивной системы.",
+        "slug": "ginekologiia"
+    }
+},
+{
+    "model": "services.service",
+    "pk": 1,
+    "fields": {
+        "name": "Уход за кожей лица",
+        "description": "Глубокое очищение и увлажнение кожи лица",
+        "category": 1,
+        "slug": "ukhod-za-kozhei-litsa"
+    }
+},
+{
+    "model": "services.service",
+    "pk": 2,
+    "fields": {
+        "name": "Массаж лица",
+        "description": "Расслабляющий массаж лица для улучшения кровообращения",
+        "category": 1,
+        "slug": "massazh-litsa"
+    }
+},
+{
+    "model": "services.service",
+    "pk": 3,
+    "fields": {
+        "name": "Антицеллюлитный массаж",
+        "description": "Процедура для уменьшения проявлений целлюлита",
+        "category": 1,
+        "slug": "antitselliulitnyi-massazh"
+    }
+},
+{
+    "model": "services.service",
+    "pk": 4,
+    "fields": {
+        "name": "Упражнения для спины",
+        "description": "Комплекс упражнений для укрепления мышц спины",
+        "category": 2,
+        "slug": "uprazhneniia-dlia-spiny"
+    }
+},
+{
+    "model": "services.service",
+    "pk": 5,
+    "fields": {
+        "name": "Развитие гибкости",
+        "description": "Упражнения для улучшения гибкости суставов",
+        "category": 2,
+        "slug": "razvitie-gibkosti"
+    }
+},
+{
+    "model": "services.service",
+    "pk": 6,
+    "fields": {
+        "name": "Реабилитация после травм",
+        "description": "Физкультурный комплекс для восстановления после травм",
+        "category": 2,
+        "slug": "reabilitatsiia-posle-travm"
+    }
+},
+{
+    "model": "services.service",
+    "pk": 7,
+    "fields": {
+        "name": "Коррекция произношения",
+        "description": "Работа над звуковым произношением",
+        "category": 3,
+        "slug": "korrektsiia-proiznosheniia"
+    }
+},
+{
+    "model": "services.service",
+    "pk": 8,
+    "fields": {
+        "name": "Логопедический массаж",
+        "description": "Улучшение речи через стимуляцию мышц",
+        "category": 3,
+        "slug": "logopedicheskii-massazh"
+    }
+},
+{
+    "model": "services.service",
+    "pk": 9,
+    "fields": {
+        "name": "Занятия для детей",
+        "description": "Развитие речи у детей",
+        "category": 3,
+        "slug": "zaniatiia-dlia-detei"
+    }
+},
+{
+    "model": "services.service",
+    "pk": 10,
+    "fields": {
+        "name": "Планирование лечения",
+        "description": "Создание индивидуального плана терапии",
+        "category": 4,
+        "slug": "planirovanie-lecheniia"
+    }
+},
+{
+    "model": "services.service",
+    "pk": 11,
+    "fields": {
+        "name": "Терапевтический сеанс",
+        "description": "Сеанс лучевой терапии",
+        "category": 4,
+        "slug": "terapevticheskii-seans"
+    }
+},
+{
+    "model": "services.service",
+    "pk": 12,
+    "fields": {
+        "name": "Контроль после лечения",
+        "description": "Мониторинг после курса терапии",
+        "category": 4,
+        "slug": "kontrol-posle-lecheniia"
+    }
+},
+{
+    "model": "services.service",
+    "pk": 13,
+    "fields": {
+        "name": "Консультация маммолога",
+        "description": "Первичная консультация врача",
+        "category": 5,
+        "slug": "konsultatsiia-mammologa"
+    }
+},
+{
+    "model": "services.service",
+    "pk": 14,
+    "fields": {
+        "name": "УЗИ молочных желез",
+        "description": "Диагностика молочных желез с помощью ультразвука",
+        "category": 5,
+        "slug": "uzi-molochnykh-zhelez"
+    }
+},
+{
+    "model": "services.service",
+    "pk": 15,
+    "fields": {
+        "name": "Биопсия тканей",
+        "description": "Взятие тканей для анализа",
+        "category": 5,
+        "slug": "biopsiia-tkanei"
+    }
+},
+{
+    "model": "services.service",
+    "pk": 16,
+    "fields": {
+        "name": "Консультация кардиолога",
+        "description": "Оценка состояния сердца и сосудов",
+        "category": 6,
+        "slug": "konsultatsiia-kardiologa"
+    }
+},
+{
+    "model": "services.service",
+    "pk": 17,
+    "fields": {
+        "name": "ЭКГ",
+        "description": "Электрокардиография сердца",
+        "category": 6,
+        "slug": "ekg"
+    }
+},
+{
+    "model": "services.service",
+    "pk": 18,
+    "fields": {
+        "name": "Мониторинг Холтера",
+        "description": "Суточное наблюдение за сердцем",
+        "category": 6,
+        "slug": "monitoring-kholtera"
+    }
+},
+{
+    "model": "services.service",
+    "pk": 19,
+    "fields": {
+        "name": "Консультация эндокринолога",
+        "description": "Диагностика и лечение эндокринных заболеваний",
+        "category": 7,
+        "slug": "konsultatsiia-endokrinologa"
+    }
+},
+{
+    "model": "services.service",
+    "pk": 20,
+    "fields": {
+        "name": "УЗИ щитовидной железы",
+        "description": "Диагностика состояния щитовидной железы",
+        "category": 7,
+        "slug": "uzi-shchitovidnoi-zhelezy"
+    }
+},
+{
+    "model": "services.service",
+    "pk": 21,
+    "fields": {
+        "name": "Анализ крови на гормоны",
+        "description": "Исследование гормонального фона",
+        "category": 7,
+        "slug": "analiz-krovi-na-gormony"
+    }
+},
+{
+    "model": "services.service",
+    "pk": 22,
+    "fields": {
+        "name": "Консультация гастроэнтеролога",
+        "description": "Обследование ЖКТ",
+        "category": 8,
+        "slug": "konsultatsiia-gastroenterologa"
+    }
+},
+{
+    "model": "services.service",
+    "pk": 23,
+    "fields": {
+        "name": "ФГДС",
+        "description": "Фиброгастродуоденоскопия",
+        "category": 8,
+        "slug": "fgds"
+    }
+},
+{
+    "model": "services.service",
+    "pk": 24,
+    "fields": {
+        "name": "Анализ кала",
+        "description": "Лабораторное исследование стула",
+        "category": 8,
+        "slug": "analiz-kala"
+    }
+},
+{
+    "model": "services.service",
+    "pk": 25,
+    "fields": {
+        "name": "Консультация уролога",
+        "description": "Диагностика и лечение урологических заболеваний",
+        "category": 9,
+        "slug": "konsultatsiia-urologa"
+    }
+},
+{
+    "model": "services.service",
+    "pk": 26,
+    "fields": {
+        "name": "УЗИ почек",
+        "description": "Диагностика почек",
+        "category": 9,
+        "slug": "uzi-pochek"
+    }
+},
+{
+    "model": "services.service",
+    "pk": 27,
+    "fields": {
+        "name": "Катетеризация",
+        "description": "Введение катетера в мочевой пузырь",
+        "category": 9,
+        "slug": "kateterizatsiia"
+    }
+},
+{
+    "model": "services.service",
+    "pk": 28,
+    "fields": {
+        "name": "Консультация дерматолога",
+        "description": "Диагностика кожных заболеваний",
+        "category": 10,
+        "slug": "konsultatsiia-dermatologa"
+    }
+},
+{
+    "model": "services.service",
+    "pk": 29,
+    "fields": {
+        "name": "Дерматоскопия",
+        "description": "Осмотр кожи с помощью дерматоскопа",
+        "category": 10,
+        "slug": "dermatoskopiia"
+    }
+},
+{
+    "model": "services.service",
+    "pk": 30,
+    "fields": {
+        "name": "Лечение угревой сыпи",
+        "description": "Комплекс процедур для борьбы с акне",
+        "category": 10,
+        "slug": "lechenie-ugrevoi-sypi"
+    }
+},
+{
+    "model": "services.service",
+    "pk": 31,
+    "fields": {
+        "name": "Комплексная диагностика зрения",
+        "description": "Комплексное обследование остроты зрения",
+        "category": 11,
+        "slug": "kompleksnaia-diagnostika-zreniia"
+    }
+},
+{
+    "model": "services.service",
+    "pk": 32,
+    "fields": {
+        "name": "Консультация офтальмолога",
+        "description": "Диагностика заболеваний глаз",
+        "category": 11,
+        "slug": "konsultatsiia-oftalmologa"
+    }
+},
+{
+    "model": "services.service",
+    "pk": 33,
+    "fields": {
+        "name": "Тонометрия",
+        "description": "Измерение внутриглазного давления",
+        "category": 11,
+        "slug": "tonometriia"
+    }
+},
+{
+    "model": "services.service",
+    "pk": 34,
+    "fields": {
+        "name": "Промывание носа",
+        "description": "Процедура для очистки пазух носа",
+        "category": 12,
+        "slug": "promyvanie-nosa"
+    }
+},
+{
+    "model": "services.service",
+    "pk": 35,
+    "fields": {
+        "name": "Консультация ЛОР-врача",
+        "description": "Обследование органов слуха и дыхания",
+        "category": 12,
+        "slug": "konsultatsiia-lor-vracha"
+    }
+},
+{
+    "model": "services.service",
+    "pk": 36,
+    "fields": {
+        "name": "Удаление серных пробок",
+        "description": "Чистка слуховых проходов",
+        "category": 12,
+        "slug": "udalenie-sernykh-probok"
+    }
+},
+{
+    "model": "services.service",
+    "pk": 37,
+    "fields": {
+        "name": "Первичная консультация хирурга",
+        "description": "Обследование и рекомендации по лечению",
+        "category": 13,
+        "slug": "pervichnaia-konsultatsiia-khirurga"
+    }
+},
+{
+    "model": "services.service",
+    "pk": 38,
+    "fields": {
+        "name": "Малая хирургия",
+        "description": "Проведение мелких хирургических вмешательств",
+        "category": 13,
+        "slug": "malaia-khirurgiia"
+    }
+},
+{
+    "model": "services.service",
+    "pk": 39,
+    "fields": {
+        "name": "Снятие швов",
+        "description": "Удаление наложенных швов",
+        "category": 13,
+        "slug": "sniatie-shvov"
+    }
+},
+{
+    "model": "services.service",
+    "pk": 40,
+    "fields": {
+        "name": "Консультация онколога",
+        "description": "Диагностика и план лечения",
+        "category": 14,
+        "slug": "konsultatsiia-onkologa"
+    }
+},
+{
+    "model": "services.service",
+    "pk": 41,
+    "fields": {
+        "name": "Биопсия опухоли",
+        "description": "Забор материала для анализа",
+        "category": 14,
+        "slug": "biopsiia-opukholi"
+    }
+},
+{
+    "model": "services.service",
+    "pk": 42,
+    "fields": {
+        "name": "Химиотерапия",
+        "description": "Проведение курса химиотерапии",
+        "category": 14,
+        "slug": "khimioterapiia"
+    }
+},
+{
+    "model": "services.service",
+    "pk": 43,
+    "fields": {
+        "name": "Консультация невролога",
+        "description": "Оценка состояния нервной системы",
+        "category": 15,
+        "slug": "konsultatsiia-nevrologa"
+    }
+},
+{
+    "model": "services.service",
+    "pk": 44,
+    "fields": {
+        "name": "ЭЭГ",
+        "description": "Электроэнцефалография",
+        "category": 15,
+        "slug": "eeg"
+    }
+},
+{
+    "model": "services.service",
+    "pk": 45,
+    "fields": {
+        "name": "Нейрореабилитация",
+        "description": "Восстановление функций после инсульта",
+        "category": 15,
+        "slug": "neiroreabilitatsiia"
+    }
+},
+{
+    "model": "services.service",
+    "pk": 46,
+    "fields": {
+        "name": "Массаж",
+        "description": "Комплексное восстановление мышц и суставов",
+        "category": 16,
+        "slug": "massazh"
+    }
+},
+{
+    "model": "services.service",
+    "pk": 47,
+    "fields": {
+        "name": "ЛФК",
+        "description": "Лечебная физкультура для восстановления",
+        "category": 16,
+        "slug": "lfk"
+    }
+},
+{
+    "model": "services.service",
+    "pk": 48,
+    "fields": {
+        "name": "Психологическая поддержка",
+        "description": "Работа с психологом для восстановления",
+        "category": 16,
+        "slug": "psikhologicheskaia-podderzhka"
+    }
+},
+{
+    "model": "services.service",
+    "pk": 49,
+    "fields": {
+        "name": "Консультация терапевта",
+        "description": "Комплексное обследование",
+        "category": 17,
+        "slug": "konsultatsiia-terapevta"
+    }
+},
+{
+    "model": "services.service",
+    "pk": 50,
+    "fields": {
+        "name": "Плановый осмотр",
+        "description": "Профилактический осмотр здоровья",
+        "category": 17,
+        "slug": "planovyi-osmotr"
+    }
+},
+{
+    "model": "services.service",
+    "pk": 51,
+    "fields": {
+        "name": "Диагностика заболеваний",
+        "description": "Обследование для постановки диагноза",
+        "category": 17,
+        "slug": "diagnostika-zabolevanii"
+    }
+},
+{
+    "model": "services.service",
+    "pk": 52,
+    "fields": {
+        "name": "Консультация педиатра",
+        "description": "Обследование и диагностика детей",
+        "category": 18,
+        "slug": "konsultatsiia-pediatra"
+    }
+},
+{
+    "model": "services.service",
+    "pk": 53,
+    "fields": {
+        "name": "Прививка от гриппа",
+        "description": "Проведение прививок от гриппа детям",
+        "category": 18,
+        "slug": "privivka-ot-grippa"
+    }
+},
+{
+    "model": "services.service",
+    "pk": 54,
+    "fields": {
+        "name": "Мониторинг здоровья",
+        "description": "Наблюдение за развитием ребенка",
+        "category": 18,
+        "slug": "monitoring-zdorovia"
+    }
+},
+{
+    "model": "services.service",
+    "pk": 55,
+    "fields": {
+        "name": "Профессиональная гигиена полости рта",
+        "description": "Удаление зубного налета и камня.",
+        "category": 19,
+        "slug": "professionalnaia-gigiena-polosti-rta"
+    }
+},
+{
+    "model": "services.service",
+    "pk": 56,
+    "fields": {
+        "name": "Пломбирование зубов",
+        "description": "Устранение кариеса и восстановление зубной ткани.",
+        "category": 19,
+        "slug": "plombirovanie-zubov"
+    }
+},
+{
+    "model": "services.service",
+    "pk": 57,
+    "fields": {
+        "name": "Отбеливание зубов",
+        "description": "Процедура для осветления эмали.",
+        "category": 19,
+        "slug": "otbelivanie-zubov"
+    }
+},
+{
+    "model": "services.service",
+    "pk": 58,
+    "fields": {
+        "name": "Консультация гинеколога",
+        "description": "Обследование и консультация специалиста.",
+        "category": 20,
+        "slug": "konsultatsiia-ginekologa"
+    }
+},
+{
+    "model": "services.service",
+    "pk": 59,
+    "fields": {
+        "name": "Ультразвуковое исследование (УЗИ)",
+        "description": "Диагностическое обследование органов малого таза.",
+        "category": 20,
+        "slug": "ultrazvukovoe-issledovanie-uzi"
+    }
+},
+{
+    "model": "services.service",
+    "pk": 60,
+    "fields": {
+        "name": "Лечение эрозии шейки матки",
+        "description": "Медицинская процедура для устранения эрозии.",
+        "category": 20,
+        "slug": "lechenie-erozii-sheiki-matki"
+    }
+}
+]
