@@ -30,11 +30,11 @@ INSTALLED_APPS = [
     'phonenumber_field',
     'sorl.thumbnail',
 
-    'clinics',
-    'doctors',
-    'main',
-    'services',
-    'users',
+    'clinics.apps.ClinicsConfig',
+    'doctors.apps.DoctorsConfig',
+    'main.apps.MainConfig',
+    'services.apps.ServicesConfig',
+    'users.apps.UsersConfig',
 ]
 
 MIDDLEWARE = [
@@ -49,10 +49,11 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'med_comfort.urls'
 
+TEMPLATES_DIR = BASE_DIR / 'templates'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates'],
+        'DIRS': [TEMPLATES_DIR],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
