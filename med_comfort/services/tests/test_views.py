@@ -1,3 +1,5 @@
+from http import HTTPStatus
+
 import pytest
 from django.urls import reverse
 from pytest_django.asserts import assertTemplateUsed
@@ -9,7 +11,7 @@ from services.models import Service, ServiceCategory
 class TestServiceListView:
     def test_page_accessible(self, client):
         response = client.get(reverse('services:services_list'))
-        assert response.status_code == 200
+        assert response.status_code == HTTPStatus.OK
 
     def test_uses_correct_template(self, client):
         response = client.get(reverse('services:services_list'))
@@ -39,13 +41,13 @@ class TestCategoryDetailView:
             'services:category_detail', kwargs={'slug': invalid_slug}
         )
         response = client.get(url)
-        assert response.status_code == 404
+        assert response.status_code == HTTPStatus.NOT_FOUND
 
     def test_page_accessible(self, client, load_service_data, first_category):
         response = client.get(reverse(
             'services:category_detail', kwargs={'slug': first_category.slug}
         ))
-        assert response.status_code == 200
+        assert response.status_code == HTTPStatus.OK
 
     def test_uses_correct_template(
             self, client, load_service_data, first_category
@@ -74,13 +76,13 @@ class TestServiceDetailView:
             'services:service_detail', kwargs={'slug': invalid_slug}
         )
         response = client.get(url)
-        assert response.status_code == 404
+        assert response.status_code == HTTPStatus.NOT_FOUND
 
     def test_page_accessible(self, client, load_service_data, first_service):
         response = client.get(reverse(
             'services:service_detail', kwargs={'slug': first_service.slug}
         ))
-        assert response.status_code == 200
+        assert response.status_code == HTTPStatus.OK
 
     def test_uses_correct_template(
             self, client, load_service_data, first_service

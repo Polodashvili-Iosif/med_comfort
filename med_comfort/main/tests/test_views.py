@@ -1,3 +1,5 @@
+from http import HTTPStatus
+
 import pytest
 from django.contrib.auth import get_user_model
 from django.urls import reverse
@@ -14,7 +16,7 @@ User = get_user_model()
 class TestIndexePage:
     def test_page_accessible(self, client):
         response = client.get(reverse('main:index'))
-        assert response.status_code == 200
+        assert response.status_code == HTTPStatus.OK
 
     def test_uses_correct_template(self, client):
         response = client.get(reverse('main:index'))
@@ -25,7 +27,7 @@ class TestIndexePage:
 class TestSearchView:
     def test_page_accessible(self, client):
         response = client.get(reverse('main:search'))
-        assert response.status_code == 200
+        assert response.status_code == HTTPStatus.OK
 
     def test_uses_correct_template(self, client):
         response = client.get(reverse('main:search'))

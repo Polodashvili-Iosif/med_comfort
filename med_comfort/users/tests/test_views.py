@@ -1,3 +1,5 @@
+from http import HTTPStatus
+
 import pytest
 from django.contrib.auth import get_user_model
 from django.urls import reverse
@@ -10,11 +12,11 @@ User = get_user_model()
 class TestProfileView:
     def test_page_accessible(self, auth_client):
         response = auth_client.get(reverse('users:profile'))
-        assert response.status_code == 200
+        assert response.status_code == HTTPStatus.OK
 
     def test_redirect_not_auth_client(self, client):
         response = client.get(reverse('users:profile'))
-        assert response.status_code == 302
+        assert response.status_code == HTTPStatus.FOUND
 
     def test_uses_correct_template(self, auth_client):
         response = auth_client.get(reverse('users:profile'))
@@ -30,11 +32,11 @@ class TestProfileView:
 class TestProfileUpdateView:
     def test_page_accessible(self, auth_client):
         response = auth_client.get(reverse('users:profile_edit'))
-        assert response.status_code == 200
+        assert response.status_code == HTTPStatus.OK
 
     def test_redirect_not_auth_client(self, client):
         response = client.get(reverse('users:profile_edit'))
-        assert response.status_code == 302
+        assert response.status_code == HTTPStatus.FOUND
 
     def test_uses_correct_template(self, auth_client):
         response = auth_client.get(reverse('users:profile_edit'))

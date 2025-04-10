@@ -1,4 +1,5 @@
 import datetime
+from http import HTTPStatus
 
 import pytest
 from django.contrib.auth import get_user_model
@@ -15,7 +16,7 @@ User = get_user_model()
 class TestDoctorListView:
     def test_page_accessible(self, client):
         response = client.get(reverse('doctors:doctors_list'))
-        assert response.status_code == 200
+        assert response.status_code == HTTPStatus.OK
 
     def test_uses_correct_template(self, client):
         response = client.get(reverse('doctors:doctors_list'))
@@ -37,13 +38,13 @@ class TestDoctorDetailView:
             'doctors:doctor_detail', kwargs={'slug': invalid_slug}
         )
         response = client.get(url)
-        assert response.status_code == 404
+        assert response.status_code == HTTPStatus.NOT_FOUND
 
     def test_page_accessible(self, client, load_doctors_data, first_doctor):
         response = client.get(reverse(
             'doctors:doctor_detail', kwargs={'slug': first_doctor.slug}
         ))
-        assert response.status_code == 200
+        assert response.status_code == HTTPStatus.OK
 
     def test_uses_correct_template(
             self, client, load_doctors_data, first_doctor
@@ -70,7 +71,7 @@ class TestDoctorDetailView:
             'doctors:select_appointment_time',
             kwargs={'pk': service.pk}
         )
-        assert response.status_code == 302
+        assert response.status_code == HTTPStatus.FOUND
         assert response.url == expected_url
 
     def test_doctor_detail_post_invalid_form(
@@ -81,7 +82,7 @@ class TestDoctorDetailView:
             kwargs={'slug': first_doctor.slug}
         )
         response = client.post(url)
-        assert response.status_code == 200
+        assert response.status_code == HTTPStatus.OK
         assert "form" in response.context
         assert response.context["form"].errors
 
@@ -96,7 +97,7 @@ class TestSelectAppointmentTime:
             'doctors:select_appointment_time',
             kwargs={'pk': first_doctorservice.pk}
         ))
-        assert response.status_code == 200
+        assert response.status_code == HTTPStatus.OK
 
     def test_uses_correct_template(
             self,
@@ -139,7 +140,7 @@ class TestSelectAppointmentTime:
         appointment = Appointment.objects.get(
             user=user, service=first_doctorservice
         )
-        assert response.status_code == 302
+        assert response.status_code == HTTPStatus.FOUND
         assert response.url == reverse(
             'doctors:appointment_detail', kwargs={'pk': appointment.pk}
         )
@@ -169,7 +170,7 @@ class TestSelectAppointmentTime:
                 kwargs={'pk': first_appointment.service.pk}
             ), {'datetime': appointment_time}
         )
-        assert response.status_code == 200
+        assert response.status_code == HTTPStatus.OK
         assert Appointment.objects.count() == initial_count
 
     def test_get_past_available_times(
@@ -252,7 +253,7 @@ class TestAppointmentDetailView:
                 kwargs={'pk': first_appointment.pk}
             )
         )
-        assert response.status_code == 200
+        assert response.status_code == HTTPStatus.OK
 
     def test_redirect_not_auth_client(
             self, client, load_doctors_data, first_appointment
@@ -263,7 +264,7 @@ class TestAppointmentDetailView:
                 kwargs={'pk': first_appointment.pk}
             )
         )
-        assert response.status_code == 302
+        assert response.status_code == HTTPStatus.FOUND
 
     def test_user_correct_template(
             self, client, load_doctors_data, first_appointment, first_user

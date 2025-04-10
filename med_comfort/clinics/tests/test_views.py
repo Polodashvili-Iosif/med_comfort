@@ -1,3 +1,5 @@
+from http import HTTPStatus
+
 import pytest
 from django.urls import reverse
 from pytest_django.asserts import assertTemplateUsed
@@ -9,7 +11,7 @@ from clinics.models import Clinic
 class TestClinicListView:
     def test_page_accessible(self, client):
         response = client.get(reverse('clinics:clinics_list'))
-        assert response.status_code == 200
+        assert response.status_code == HTTPStatus.OK
 
     def test_uses_correct_template(self, client):
         response = client.get(reverse('clinics:clinics_list'))
@@ -29,13 +31,13 @@ class TestServiceDetailView:
             'clinics:clinic_detail', kwargs={'pk': invalid_pk}
         )
         response = client.get(url)
-        assert response.status_code == 404
+        assert response.status_code == HTTPStatus.NOT_FOUND
 
     def test_page_accessible(self, client, load_clinics_data, first_clinic):
         response = client.get(reverse(
             'clinics:clinic_detail', kwargs={'pk': first_clinic.pk}
         ))
-        assert response.status_code == 200
+        assert response.status_code == HTTPStatus.OK
 
     def test_uses_correct_template(
             self, client, load_clinics_data, first_clinic
